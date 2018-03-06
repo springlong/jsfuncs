@@ -4,7 +4,7 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 ## 类型判断
 
-1. [typecheck.js](./scripts/typecheck.js) 提供了`.isStr()`、`.isNumeric()`、`.isFunction()`、`.isArray()`、`.isArrayLike()`、`.isDate()`、`.isPlainObject()`、`.isEmptyObject()`、`.isWindow()`等常用类型判断，[demo文件](//htmlpreview.github.io/?https://github.com/springlong/jsfuncs/blob/master/demo/typecheck.html)。
+1. [typecheck.js](./scripts/typecheck.js) 提供了`.isStr()`、 `.isNumeric()`、 `.isFunction()`、 `.isArray()`、 `.isArrayLike()`、 `.isDate()`、 `.isPlainObject()`、 `.isEmptyObject()`、 `.isWindow()` 等常用类型判断。
 
 ## Number类型 & Math对象
 
