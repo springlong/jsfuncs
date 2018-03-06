@@ -52,7 +52,7 @@ Number.prototype.toFixed = function(length) {
 
     // 如果小数位数过长则需要截取
     if(length < lenAterDotted) {
-        strNumAfterDotted = strNumAfterDotted.substring(0, length);
+        strNumAfterDotted = strNumAfterDotted.substring(0, len gth);
     }
 
     // 拼接结果
@@ -61,3 +61,4 @@ Number.prototype.toFixed = function(length) {
     }
     return (lessZero ? '-' : '') + strNumBeforeDotted + strNumAfterDotted;
 };
+
