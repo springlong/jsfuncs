@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>String对象的兼容处理</title>
+    <script src="../scripts/String.js"></script>
+</head>
+<body>
+<script>
+    console.log('   abc   '.trim());  //  'abc'
+
+    console.info('includes:');
+    console.log('abc123efg'.includes('123'));  // true
+    console.log('abc123efg'.includes('123', 6));  // false
+
+    console.info('startsWith:');
+    console.log('abc123efg'.startsWith('abc'));  // true
+    console.log('abc123efg'.startsWith('123', 3));  // true
+    console.log('abc123efg'.startsWith('123', 4));  // false
+
+    console.info('endsWith:');
+    console.log('abc123efg'.endsWith('efg'));  // true
+    console.log('abc123efg'.endsWith('123', 6));  // true
+    console.log('abc123efg'.endsWith('123', 5));  // false
+
+    console.info('repeat:');
+    console.log('abc'.repeat());  // ''
+    console.log('abc'.repeat(false));  // ''
+    console.log('abc'.repeat(3));  // 'abcabcabc'
+    console.log('abc'.repeat('3'));  // 'abcabcabc'
+
+    console.info('padStart:');
+    console.log('abc'.padStart());  // 'abc'
+    console.log('abc'.padStart(3, '123'));  // 'abc'
+    console.log('abc'.padStart(6, '123'));  // '123abc'
+    console.log('abc'.padStart(7, '123'));  // '1231abc'
+
+    console.info('padEnd:');
+    console.log('abc'.padEnd());  // 'abc'
+    console.log('abc'.padEnd(3, '123'));  // 'abc'
+    console.log('abc'.padEnd(6, '123'));  // '123abc'
+    console.log('abc'.padEnd(7, '123'));  // '1231abc'
+</script>
+</body>
+</html>
