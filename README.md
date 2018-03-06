@@ -9,12 +9,12 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 ## String对象
 
 1. [String.prototype.trim()](./scripts/String.js) 去除目标字符串首尾两端的所有空格，并作为新字符串返回。
-1. [String.prototype.includes(search, position)](./scripts/String.js) 判断目标字符串中是否存在检索字符串
-1. [String.prototype.startsWith(search, position)](./scripts/String.js) 判断目标字符串是否以检索字符串开头
-1. [String.prototype.endsWith(search, position)](./scripts/String.js) 判断目标字符串是否以检索字符串结束
-1. [String.prototype.repeat(count)](./scripts/String.js) 返回目标字符串重复连接的结果（原字符串不受影响）
-1. [String.prototype.padStart(targetLen, padStr)](./scripts/String.js) 使用填充字符串对目标字符进行前置填充以达到指定长度
-1. [String.prototype.padEnd(targetLen, padStr)](./scripts/String.js) 使用填充字符串对目标字符进行末尾填充以达到指定长度
+1. [String.prototype.includes(search, position)](./scripts/String.js) 判断目标字符串中是否存在检索字符串。
+1. [String.prototype.startsWith(search, position)](./scripts/String.js) 判断目标字符串是否以检索字符串开头。
+1. [String.prototype.endsWith(search, position)](./scripts/String.js) 判断目标字符串是否以检索字符串结束。
+1. [String.prototype.repeat(count)](./scripts/String.js) 返回目标字符串重复连接的结果（原字符串不受影响）。
+1. [String.prototype.padStart(targetLen, padStr)](./scripts/String.js) 使用填充字符串对目标字符进行前置填充以达到指定长度（原字符串不受影响）。
+1. [String.prototype.padEnd(targetLen, padStr)](./scripts/String.js) 使用填充字符串对目标字符进行末尾填充以达到指定长度（原字符串不受影响）。
 
 ## Number类型 & Math对象
 
