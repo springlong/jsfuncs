@@ -20,7 +20,7 @@
     /**
      * 判断目标字符串中是否存在检索字符串
      * 该方法在ECMAScript6中被提出, 浏览器支持：Chrome 41+、Firefox 40+、Safari 9+，IE不支持
-     * @param  {String} search    需要检索的字符串
+     * @param  {String} [search]   需要检索的字符串，不提供参数将返回false
      * @param  {Number} [position] 指定开始查找的索引位置，默认为0（非正数情况一律默认为0）
      * @return {Boolean}          
      */
@@ -31,7 +31,7 @@
     /**
      * 判断目标字符串是否以检索字符串开头
      * 该方法在ECMAScript6中被提出, 浏览器支持：Chrome 59+、Firefox 17+
-     * @param  {String} search    需要检索的字符串
+     * @param  {String} [search]   需要检索的字符串，不提供参数将返回false
      * @param  {Number} [position] 指定本次检索中“目标字符串”的起始位置，默认为0（非正数情况一律默认为0）
      * @return {Boolean}          
      */
@@ -43,7 +43,7 @@
     /**
      * 判断目标字符串是否以检索字符串结束
      * 该方法在ECMAScript6中被提出, 浏览器支持：Chrome 59+、Firefox 17+
-     * @param  {String} search    需要检索的字符串
+     * @param  {String} [search]    需要检索的字符串，不提供参数将返回false
      * @param  {Number} [position] 指定本次检索中“目标字符串”的结束位置，默认为原字符串的长度（当该值小于1时，将返回false）
      * @return {Boolean}          
      */
@@ -57,7 +57,7 @@
      * 如果参数为空或者为0，则返回空字符串。
      * 如果参数为数字字符串，则作为数字处理。
      * 该方法在ECMAScript6中被提出, 浏览器支持：Chrome 41+、Firefox 24+、Safari 9+
-     * @param  {Number} count 指明需要重复连接的次数
+     * @param  {Number} [count] 指明需要重复连接的次数，如果为空或者不是一个有效数字将返回空字符串
      * @return {String}
      */
     strPro.repeat === undefined && (strPro.repeat = function(count) {
@@ -67,8 +67,8 @@
     /**
      * 返回 使用填充字符串对目标字符进行前置填充达到指定长度 后的新字符串
      * 该方法在ECMAScript 2017中被提出, 浏览器支持：Chrome 57+、Firefox 48+、Safari 10+、Edge 15+，IE不支持
-     * @param  {Number} targetLen 目标长度，默认为目标字符串的长度，如果指定的长度小于目标字符串的长度，则返回原目标字符串
-     * @param  {String} padStr 填充字符串，默认使用空格进行填充，如果填充字符串太长使得填充后的字符串长度超过了目标长度，则只保留最左侧的填充部分，其它部分会被截断
+     * @param  {Number} [targetLen] 目标长度，默认为目标字符串的长度，如果指定的长度小于目标字符串的长度，则返回原目标字符串
+     * @param  {String} [padStr] 填充字符串，默认使用空格进行填充，如果填充字符串太长使得填充后的字符串长度超过了目标长度，则只保留最左侧的填充部分，其它部分会被截断
      * @return {String}
      */
     strPro.padStart === undefined && (strPro.padStart = function(targetLen, padStr) {
@@ -78,8 +78,8 @@
     /**
      * 返回 使用填充字符串对目标字符进行末尾填充达到指定长度 后的新字符串
      * 该方法在ECMAScript 2017中被提出, 浏览器支持：Chrome 57+、Firefox 48+、Safari 10+、Edge 15+，IE不支持
-     * @param  {Number} targetLen 目标长度，如果指定的长度小于目标字符串的长度，则返回原目标字符串
-     * @param  {String} padStr 填充字符串，默认使用空格进行填充，如果填充字符串太长使得填充后的字符串长度超过了目标长度，则只保留最左侧的填充部分，其它部分会被截断
+     * @param  {Number} [targetLen] 目标长度，默认为目标字符串的长度，如果指定的长度小于目标字符串的长度，则返回原目标字符串
+     * @param  {String} [padStr] 填充字符串，默认使用空格进行填充，如果填充字符串太长使得填充后的字符串长度超过了目标长度，则只保留最左侧的填充部分，其它部分会被截断
      * @return {String}
      */
     strPro.padEnd === undefined && (strPro.padEnd = function(targetLen, padStr) {
