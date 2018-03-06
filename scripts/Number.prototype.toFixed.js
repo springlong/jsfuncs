@@ -1,14 +1,14 @@
 
-// ĞŞ¸´ Number.prototype.toFixed()
-// Number.prototype.toFixed() ÄÚ²¿ÊÇ²ÉÓÃ³Ë³ı·¨¼ÆËãµÄ·½Ê½À´±£ÁôĞ¡ÊıÎ»µÄ£¬ÓÉÓÚJS¸¡µãÊı¾«¶ÈµÄÎÊÌâ£¬ÔÚÄ³Ğ©ÊıÖµµÄÇé¿öÏÂµÃ²»µ½ÕıÈ·µÄ½á¹û
-// ĞŞ¸´ÎÊÌâ£º(321.775).toFixed(2) = 321.77
-// ÎÊÌâÖ¢½á£º321.775*100 = 32177.499999999996
+// ä¿®å¤ Number.prototype.toFixed()
+// Number.prototype.toFixed() å†…éƒ¨æ˜¯é‡‡ç”¨ä¹˜é™¤æ³•è®¡ç®—çš„æ–¹å¼æ¥ä¿ç•™å°æ•°ä½çš„ï¼Œç”±äºJSæµ®ç‚¹æ•°ç²¾åº¦çš„é—®é¢˜ï¼Œåœ¨æŸäº›æ•°å€¼çš„æƒ…å†µä¸‹å¾—ä¸åˆ°æ­£ç¡®çš„ç»“æœ
+// ä¿®å¤é—®é¢˜ï¼š(321.775).toFixed(2) = 321.77
+// é—®é¢˜ç—‡ç»“ï¼š321.775*100 = 32177.499999999996
 // 
-// ÔÚÊµÏÖ¹ı³ÌÖĞ£¬ÓÉÓÚ¿¼ÂÇ²»È«Ãæ£¬µ¼ÖÂÁËĞÂµÄÎÊÌâ£¨ÏÖÒÑĞŞ¸´£©£º
+// åœ¨å®ç°è¿‡ç¨‹ä¸­ï¼Œç”±äºè€ƒè™‘ä¸å…¨é¢ï¼Œå¯¼è‡´äº†æ–°çš„é—®é¢˜ï¼ˆç°å·²ä¿®å¤ï¼‰ï¼š
 // (162.70).toFixed(2) = 162.69 
 // (51.11+93.6).toFixed(2) = 144.70
 // 
-// ĞŞ¸´·½Ê½£º±ÜÃâ¸¡µãÊıÊ¹ÓÃ³Ë³ı·¨£¬²ÉÓÃ×Ö·û´®Æ´½ÓµÄ·½Ê½À´±£ÁôÖ¸¶¨Ğ¡ÊıÎ»
+// ä¿®å¤æ–¹å¼ï¼šé¿å…æµ®ç‚¹æ•°ä½¿ç”¨ä¹˜é™¤æ³•ï¼Œé‡‡ç”¨å­—ç¬¦ä¸²æ‹¼æ¥çš„æ–¹å¼æ¥ä¿ç•™æŒ‡å®šå°æ•°ä½
 // ==========================================================================================================================
 Number.prototype.toFixed = function(length) {
 
@@ -23,13 +23,13 @@ Number.prototype.toFixed = function(length) {
         isNeedAdd = start !== -1 && strNum.substring(lastNumIndex, lastNumIndex + 1) >= 5,
         temp, intergerNum;
 
-    // absNum½ö±£ÁôÖ¸¶¨Ğ¡ÊıÎ»£¬ÇÒ×ª»»ÎªÕûÊı
+    // absNumä»…ä¿ç•™æŒ‡å®šå°æ•°ä½ï¼Œä¸”è½¬æ¢ä¸ºæ•´æ•°
     if(start !== -1) {
         absNum = strNum.substring(0, lastNumIndex);
         intergerNum = parseInt(absNum.replace('.', ''));
     }
 
-    // ËÄÉáÎåÈë£¬×ª»»ÎªÕûÊı½øĞĞ¼Ó1£¬±ÜÃâĞ¡Êı¼Ó·¨Ôì³É¾«¶È¶ªÊ§
+    // å››èˆäº”å…¥ï¼Œè½¬æ¢ä¸ºæ•´æ•°è¿›è¡ŒåŠ 1ï¼Œé¿å…å°æ•°åŠ æ³•é€ æˆç²¾åº¦ä¸¢å¤±
     if(isNeedAdd) {
         temp = intergerNum + 1;
         temp = temp/times;
@@ -37,7 +37,7 @@ Number.prototype.toFixed = function(length) {
         temp = absNum;
     }
 
-    // ×ª»»Îª×Ö·û´®
+    // è½¬æ¢ä¸ºå­—ç¬¦ä¸²
     temp += '';
 
     var startIndex = temp.indexOf('.'),
@@ -45,17 +45,17 @@ Number.prototype.toFixed = function(length) {
         strNumAfterDotted = startIndex === -1 ? '' : temp.substring(startIndex + 1),
         lenAterDotted = strNumAfterDotted.length;
 
-    // ²¹È«Ä©Î²µÄ0Âú×ã³¤¶È
+    // è¡¥å…¨æœ«å°¾çš„0æ»¡è¶³é•¿åº¦
     for(var i = 0, e = length - lenAterDotted; i < e; i++) {
         strNumAfterDotted += '0';
     }
 
-    // Èç¹ûĞ¡ÊıÎ»Êı¹ı³¤ÔòĞèÒª½ØÈ¡
+    // å¦‚æœå°æ•°ä½æ•°è¿‡é•¿åˆ™éœ€è¦æˆªå–
     if(length < lenAterDotted) {
         strNumAfterDotted = strNumAfterDotted.substring(0, len gth);
     }
 
-    // Æ´½Ó½á¹û
+    // æ‹¼æ¥ç»“æœ
     if(strNumAfterDotted !== '') {
         strNumAfterDotted = '.' + strNumAfterDotted;
     }
