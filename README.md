@@ -50,7 +50,7 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 1. [Array.prototype.copyWithin (target, start, end)](./scripts/array.js#L392)<br>(ES6) 复制数组内部从起始位置到结束位置之间的数据（不包含结束位置）到数组的另一个目标位置，原数组的内容将变更但不修改其大小，最后返回原数组。
 
-1. [Array.prototype.includes (search, fromIndex)](./scripts/array.js#L392)<br>(ES2016) 返回数据中是否存在检索的值，如果是则返回true，否则返回false。
+1. [Array.prototype.includes (search, fromIndex)](./scripts/array.js#L431)<br>(ES2016) 返回数据中是否存在检索的值，如果是则返回true，否则返回false。
 
 1. [Array.unique (arr)](./scripts/array.js#L200)<br>(自定义扩展) 返回目标数组去重后所组成的新数组（仅支持值引用的值，不排序，原数组的值不受影响）。
 
