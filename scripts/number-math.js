@@ -52,7 +52,7 @@ Number.prototype.toFixed = function(length) {
 
     // 如果小数位数过长则需要截取
     if(length < lenAterDotted) {
-        strNumAfterDotted = strNumAfterDotted.substring(0, len gth);
+        strNumAfterDotted = strNumAfterDotted.substring(0, length);
     }
 
     // 拼接结果
@@ -71,7 +71,7 @@ Number.prototype.toFixed = function(length) {
  * @param  {Number} max 最大值
  * @return {Number}
  */
-function random (min, max) {
+function randomInt (min, max) {
     
     if(isNaN(min) || isNaN(max)) return 0;
     if(min > max){
@@ -82,4 +82,21 @@ function random (min, max) {
     return Math.round(Math.random()*(max - min) + min);
 }
 
- 
+
+/**
+ * 将目标数值转换为千分位表示法
+ * @param  {Number} num 目标数值
+ * @return {String}
+ */
+function commafy (num) {
+
+    var strNum = num + '',
+        reg = /^(-?\d+)(\d{3})/;
+
+    while(reg.test(strNum)) {
+        strNum = strNum.replace(reg, '$1,$2');
+    }
+
+    return strNum;
+}
+
