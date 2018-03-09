@@ -12,11 +12,11 @@
     /**
      * 返回需要检索的值在数组中第一次出现的索引位置，不存在则返回-1。
      * 该方法在ECMAScript5中被提出，目前在IE6~8中不被支持。
-     * @param  {AnyType} [search]   需要检索的值，不提供参数将返回-1
+     * @param  {AnyType} [search]   需要检索的值，不提供参数时为undefined
      * @param  {Number} [fromIndex] 指定开始查找的索引位置，默认值为0，为负数时表示倒数第n个位置（非数值情况下使用Number进行转换）
      * @return {Number}
      */
-    arrayPro.indexOf === undefined && (arrayPro.indexOf = function(search, fromIndex) {
+    !arrayPro.indexOf && (arrayPro.indexOf = function(search, fromIndex) {
 
         var result = -1,
             len = this.length,
@@ -40,7 +40,7 @@
      * @param  {Object} [thisArg] 回调函数中this的值，默认为window对象
      * @return {Array}
      */
-    arrayPro.filter === undefined && (arrayPro.filter = function(callback, thisArg) {
+    !arrayPro.filter && (arrayPro.filter = function(callback, thisArg) {
 
         // 回调函数：function(val, index, arr){}
         // 回调函数-参数val：当前元素的值；
@@ -71,7 +71,7 @@
      * @param  {Object} [thisArg] 回调函数中this的值，默认为window对象
      * @return {Array}
      */
-    arrayPro.map === undefined && (arrayPro.map = function(callback, thisArg) {
+    !arrayPro.map && (arrayPro.map = function(callback, thisArg) {
 
         // 回调函数：function(val, index, arr){}
         // 回调函数-参数val：当前元素的值；
@@ -101,7 +101,7 @@
      * @param  {Object} [thisArg] 回调函数中this的值，默认为window对象
      * @return {undefined}
      */
-    arrayPro.forEach === undefined && (arrayPro.forEach = function(callback, thisArg) {
+    !arrayPro.forEach && (arrayPro.forEach = function(callback, thisArg) {
 
         // 回调函数：function(val, index, arr){}
         // 回调函数-参数val：当前元素的值；
@@ -130,7 +130,7 @@
      * @param  {Object} [thisArg] 回调函数中this的值，默认为window对象
      * @return {undefined}
      */
-    arrayPro.every === undefined && (arrayPro.every = function(callback, thisArg) {
+    !arrayPro.every && (arrayPro.every = function(callback, thisArg) {
 
         // 回调函数：function(val, index, arr){}
         // 回调函数-参数val：当前元素的值；
@@ -163,7 +163,7 @@
      * @param  {Object} [thisArg] 回调函数中this的值，默认为window对象
      * @return {undefined}
      */
-    arrayPro.some === undefined && (arrayPro.some = function(callback, thisArg) {
+    !arrayPro.some && (arrayPro.some = function(callback, thisArg) {
 
         // 回调函数：function(val, index, arr){}
         // 回调函数-参数val：当前元素的值；
@@ -192,7 +192,7 @@
      * 该方法在ECMAScript5中被提出，目前在IE6~8中不被支持。
      * @return {Boolean}
      */
-    Array.isArray === undefined && (Array.isArray = function(source) {
+    !Array.isArray && (Array.isArray = function(source) {
         return Object.prototype.toString.call(source) === '[object Array]';
     });
 
@@ -252,7 +252,7 @@
      * @param  {Function} [thisArg] 回调函数中this的值，默认为window对象
      * @return {Array}
      */
-    Array.from === undefined && (Array.from = function(source, callback, thisArg) {
+    !Array.from && (Array.from = function(source, callback, thisArg) {
 
         // 回调函数：function(val, index, arr){}
         // 回调函数-参数val：当前元素的值；
@@ -291,7 +291,7 @@
      * 该方法在ECMAScript6中被提出，浏览器支持：Chrome 45+、Firefox 25+、Safari 9+、Edge，IE不支持
      * @return {Array}
      */
-    Array.of === undefined && (Array.of = function() {
+    !Array.of && (Array.of = function() {
         return [].slice.call(arguments);
     });
 
@@ -303,7 +303,7 @@
      * @param  {Object} [thisArg] 回调函数中this的值，默认为window对象
      * @return {Array}
      */
-    arrayPro.find === undefined && (arrayPro.find = function(callback, thisArg) {
+    !arrayPro.find && (arrayPro.find = function(callback, thisArg) {
 
         // 回调函数：function(val, index, arr){}
         // 回调函数-参数val：当前元素的值；
@@ -335,7 +335,7 @@
      * @param  {Object} [thisArg] 回调函数中this的值，默认为window对象
      * @return {Array}
      */
-    arrayPro.findIndex === undefined && (arrayPro.findIndex = function(callback, thisArg) {
+    !arrayPro.findIndex && (arrayPro.findIndex = function(callback, thisArg) {
 
         // 回调函数：function(val, index, arr){}
         // 回调函数-参数val：当前元素的值；
@@ -363,12 +363,12 @@
     /**
      * 使用一个固定的值对数组中从起始位置到结束位置内的全部元素进行填充（不包含结束位置）（原数组值将变更）
      * 该方法在ECMAScript6中被提出，浏览器支持：Chrome 45+、Firefox 31+、Safari 8+、Edge，IE不支持
-     * @param  {AnyType} value 填充数组使用的值
+     * @param  {AnyType} [value] 填充数组使用的值，默认值为undefined
      * @param  {Number} [start] 起始位置，默认为0，为负数时表示倒数第n个位置（非数值情况下使用Number进行转换）
      * @param  {Number} [end] 结束位置，默认为数组长度，为负数时表示倒数第n个位置（非数值情况下使用Number进行转换）
      * @return {Array}
      */
-    arrayPro.fill === undefined && (arrayPro.fill = function(value, start, end) {
+    !arrayPro.fill && (arrayPro.fill = function(value, start, end) {
 
         var i = 0,
             len = this.length;
@@ -392,12 +392,12 @@
     /**
      * 复制数组内部从起始位置到结束位置之间的数据（不包含结束位置）到数组的另一个目标位置，原数组的内容将变更但不修改其大小，最后返回原数组
      * 该方法在ECMAScript6中被提出，浏览器支持：Chrome 45+、Firefox 32+、Safari 9+、Edge 12+，IE不支持
-     * @param  {Number} target 目标位置
+     * @param  {Number} [target] 目标位置
      * @param  {Number} [start] 起始位置，默认为0，为负数时表示倒数第n个位置（非数值情况下使用Number进行转换）
      * @param  {Number} [end] 结束位置，默认为数组长度，为负数时表示倒数第n个位置（非数值情况下使用Number进行转换）
      * @return {Array}
      */
-    arrayPro.copyWithin === undefined && (arrayPro.copyWithin = function(target, start, end) {
+    !arrayPro.copyWithin && (arrayPro.copyWithin = function(target, start, end) {
 
         var i = 0,
             len = this.length,
@@ -431,11 +431,11 @@
     /**
      * 返回数据中是否存在检索的值，如果是则返回true，否则返回false
      * 该方法在ECMAScript 2016中被提出，浏览器支持：Chrome 47+、Firefox 43+、Safari 9+、Edge 14+，IE不支持
-     * @param  {AnyType} [search]   需要检索的值
+     * @param  {AnyType} [search]   需要检索的值，默认值为undefined
      * @param  {Number} [fromIndex] 指定开始查找的索引位置，默认值为0，为负数时表示倒数第n个位置（非数值情况下使用Number进行转换）
      * @return {Number}
      */
-    arrayPro.includes === undefined && (arrayPro.includes = function(search, fromIndex) {
+    !arrayPro.includes && (arrayPro.includes = function(search, fromIndex) {
 
         var len = this.length,
             start = Number(fromIndex),
