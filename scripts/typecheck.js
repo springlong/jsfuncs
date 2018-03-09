@@ -3,11 +3,11 @@
 var type = {
 
     /**
-     * 判断类型是否为：DOM元素（包括元素节点、文本节点、注释节点、文档节点、文档片段节点）
+     * 判断类型是否为：DOM节点（包括元素节点、文本节点、注释节点、文档节点、文档片段节点）
      * @param  {任意类型}  value 需要判断的值
      * @return {Boolean}       是/否
      */
-    isDOM: function(value) {
+    isNode: function(value) {
         return value && value.nodeType !== undefined;
     },
 
