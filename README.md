@@ -6,6 +6,24 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 1. [typecheck.js](./scripts/typecheck.js)<br>提供了`.isStr()`、 `.isNumeric()`、 `.isFunction()`、 `.isArray()`、 `.isArrayLike()`、 `.isDate()`、 `.isPlainObject()`、 `.isEmptyObject()`、 `.isWindow()` 等常用类型判断。
  
+## Object对象
+
+1. [Object.create (proto, propertiesObject)](./scripts/object.js)<br>(ES5) 创建一个具有指定原型的新对象并返回。
+
+1. [Object.getPrototypeOf (obj)](./scripts/object.js#L36)<br>(ES5) 返回目标对象的原型。
+
+1. [Object.is (x, y)](./scripts/object.js#L52)<br>(ES6) 判断两个值是是否是相同的值，与严格等于的区别在于：NaN和NaN同值相等，+0和-0不相等。
+
+1. [Object.keys (obj)](./scripts/object.js#L71)<br>(ES5) 返回目标对象所有可遍历属性的键名所组成的数组。
+
+1. [Object.values (obj)](./scripts/object.js#L97)<br>(ES2017) 返回目标对象所有可遍历属性的键值所组成的数组。
+
+1. [Object.entries (obj)](./scripts/object.js#L121)<br>(ES2017) 返回目标对象所有可遍历属性的键值对数组所组成的数组。
+
+1. [Object.assign (target, sources)](./scripts/object.js#L145)<br>(ES6) 将来自一个或多个源对象中的所有可枚举的属性值复制到目标对象，并返回目标对象。该方法执行的是浅拷贝，相同属性的值将被后来者覆盖，而不会处理子级对象成员的合并。
+
+1. [extend (deep, target, sources)](./scripts/object.js#L167)<br>(自定义函数) 将来自一个或多个源对象中的所有可枚举的属性值复制到目标对象，并返回目标对象。该方法可根据deep参数决定是否需要进行数组和对象的深度拷贝。
+ 
 ## String对象
 
 1. [String.prototype.trim ()](./scripts/string.js)<br>(ES5) 去除目标字符串首尾两端的所有空格，并作为新字符串返回。
@@ -60,7 +78,7 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 1. [Number.prototype.toFixed ()](./scripts/number-math.js#L2)<br>(ES3) 修复由于JS浮点数精度的问题导致在某些数值的情况下得不到正确的结果。
 
-1. [randomInt (min, max)](./scripts/number-math.js#L66)<br>随机生成位于min~max之间的整数（包括min和max本身）。
+1. [randomInt (min, max)](./scripts/number-math.js#L66)<br>(自定义函数) 随机生成位于min~max之间的整数（包括min和max本身）。
 
-1. [commafy (num)](./scripts/number-math.js#L86)<br>将目标数值转换为千分位表示法。
+1. [commafy (num)](./scripts/number-math.js#L86)<br>(自定义函数) 将目标数值转换为千分位表示法。
 
