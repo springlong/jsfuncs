@@ -71,6 +71,7 @@
     /**
      * 返回目标对象所有可遍历属性的键名所组成的数组
      * 该方法在ECMAScript5中被提出，IE6~8不支持！
+     * 该方法在IE9/10的实现中，如果参数不是对象，则会报错！
      * @param  {Object} obj   目标对象
      * @return {Array}
      */
@@ -156,75 +157,97 @@
             throw new Error('Cannot convert undefined or null to object');
         }
 
+        var name, collection,
+            argLen = arguments.length,   // 参数的长度
+            index = 1;              // 扩展的成员从哪个索引参数开始
+
         // 将基本类型转换为对象
-        var args = Array.prototype.slice.call(arguments);
-        args[0] = Object(args[0]);
-
-        return extend.apply(undefined, args);
-    });
-
-
-    /**
-     * 将来自一个或多个源对象中的所有可枚举的属性值复制到目标对象，并返回目标对象
-     * 该方法可根据deep参数决定是否需要进行数组和对象的深度拷贝
-     * @param  {Boolean} [deep]   是否执行深度拷贝，默认为false
-     * @param  {Object} target    目标对象
-     * @param  {Object} ...sources 一个或多个源对象
-     */
-    function extend () {
-
-        var name, sourceItem, targetItem, collection, isPlainObject,
-            args = arguments,
-            argLen = args.length,   // 参数的长度
-            target = args[0],       // 需要扩展成员的目标对象
-            deep = false,           // 是否进行深度合并
-            index = 1;         // 扩展的成员从哪个索引参数开始
-
-        if(typeof args[0] === 'boolean'){
-            deep = args[0];
-            target = args[1];
-            index = 2;
-        }
-        else if(argLen === 1){
-            return args[0];
-        }
-
-        // 判断类型是否为：通过{}或者new Object()创建的对象（就是指除内置对象和HTML对象外的自定义对象）
-        isPlainObject = function (value) {
-            return value && Object.prototype.toString.call(value).toLowerCase() === '[object object]'
-                && value.toString().toLowerCase() === "[object object]";
-        };
+        target = Object(target);
 
         // 将需要扩展的成员加入到目标对象
         for(; index < argLen; index++){
 
-            collection = args[index];
+            collection = arguments[index];
+            collection = typeof collection === 'string' ? collection.split('') : collection;
 
-            for(name in collection){ // 该语句对null、undefined、数字、布尔值不会执行遍历操作
+            // 该语句对null、undefined、数字、布尔值不会执行遍历操作，
+            // string类型是一个可遍历对象，所以这里字符串会被按索引进行合并，
+            // 但是IE8不支持对字符串的遍历，所以这里先将字符串转换为数组后再做处理
+            for(name in collection){
 
                 if(Object.prototype.hasOwnProperty.call(collection, name)) {
-
-                    sourceItem = collection[name];
-                    targetItem = target[name];
-
-                    // 只针对PlainObject对象和数组进行深度拷贝
-                    if(deep && ((isPlainObject(sourceItem) && isPlainObject(targetItem)) || 
-                                (sourceItem instanceof Array && targetItem instanceof Array))) {
-                        target[name] = extend(deep, targetItem, sourceItem);
-                    }
-                    else {
-                        // null和undefined也将被处理
-                        target[name] = sourceItem;
-                    }
+                    target[name] = collection[name];
                 }
             }
         }
 
         // 将被扩展后的目标对象返回
         return target;
-    }
-
-    window.extend = extend;
+    });
 
 })();
 
+
+/**
+ * 将来自一个或多个源对象中的所有可枚举的属性值复制到目标对象，并返回目标对象
+ * 该方法可根据deep参数决定是否需要进行数组和对象的深度拷贝
+ * @param  {Boolean} [deep]   是否执行深度拷贝，默认为false
+ * @param  {Object} target    目标对象
+ * @param  {Object} ...sources 一个或多个源对象
+ */
+function extend () {
+
+    var name, sourceItem, targetItem, collection, isPlainObject,
+        args = arguments,
+        argLen = args.length,   // 参数的长度
+        target = args[0],       // 需要扩展成员的目标对象
+        deep = false,           // 是否进行深度合并
+        index = 1;         // 扩展的成员从哪个索引参数开始
+
+    if(typeof args[0] === 'boolean'){
+        deep = args[0];
+        target = args[1];
+        index = 2;
+    }
+    else if(argLen === 1){
+        return args[0];
+    }
+
+    // 判断类型是否为：通过{}或者new Object()创建的对象（就是指除内置对象和HTML对象外的自定义对象）
+    isPlainObject = function (value) {
+        return value && Object.prototype.toString.call(value).toLowerCase() === '[object object]'
+            && value.toString().toLowerCase() === "[object object]";
+    };
+
+    // 将需要扩展的成员加入到目标对象
+    for(; index < argLen; index++){
+
+        collection = args[index];
+        collection = typeof collection === 'string' ? collection.split('') : collection;
+
+        // 该语句对null、undefined、数字、布尔值不会执行遍历操作，
+        // string类型是一个可遍历对象，所以这里字符串会被按索引进行合并
+        // 但是IE8不支持对字符串的遍历，所以这里先将字符串转换为数组后再做处理
+        for(name in collection){
+
+            if(Object.prototype.hasOwnProperty.call(collection, name)) {
+
+                sourceItem = collection[name];
+                targetItem = target[name];
+
+                // 只针对PlainObject对象和数组进行深度拷贝
+                if(deep && ((isPlainObject(sourceItem) && isPlainObject(targetItem)) || 
+                            (sourceItem instanceof Array && targetItem instanceof Array))) {
+                    target[name] = extend(deep, targetItem, sourceItem);
+                }
+                else {
+                    // null和undefined也将被处理
+                    target[name] = sourceItem;
+                }
+            }
+        }
+    }
+
+    // 将被扩展后的目标对象返回
+    return target;
+}

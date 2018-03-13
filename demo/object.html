@@ -54,8 +54,8 @@
 	console.log('================================================');
 	console.log(Object.keys(['a', 'b', 'c']));
 	console.log(Object.keys({a:1, b:2, c:3}));
-	console.log(Object.keys(false));
-	console.log(Object.keys(112312));
+	// console.log(Object.keys(false));
+	// console.log(Object.keys(112312));
 	console.log(Object.keys(Date));
 	console.log(Object.keys(window));
 
@@ -132,15 +132,17 @@
 
 
 	console.log('================================================');
-	var assign1 = Object.assign({}, Array);
-	var assign2 = Object.assign({}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
+	var assign1 = Object.assign({}, '12345');
+	var assign2 = Object.assign({}, Array);
+	var assign3 = Object.assign({}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
 
 
 	// console.log('================================================');
-	var extend1 = extend({}, Array);
-	var extend2 = extend({}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
-	var extend3 = extend(true, {}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
-	var extend4 = extend(true, {}, 
+	var extend1 = extend({}, '12345');
+	var extend2 = extend({}, Array);
+	var extend3 = extend({}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
+	var extend4 = extend(true, {}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
+	var extend5 = extend(true, {}, 
 								{a:{
 									b:{
 										c:{
@@ -161,7 +163,7 @@
 									}, 
 									b2:{}
 								}});
-	var extend5 = extend(false, {}, 
+	var extend6 = extend(false, {}, 
 								{a:{
 									b:{
 										c:{

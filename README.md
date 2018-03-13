@@ -16,13 +16,13 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 1. [Object.keys (obj)](./scripts/object.js#L71)<br>(ES5) 返回目标对象所有可遍历属性的键名所组成的数组。
 
-1. [Object.values (obj)](./scripts/object.js#L97)<br>(ES2017) 返回目标对象所有可遍历属性的键值所组成的数组。
+1. [Object.values (obj)](./scripts/object.js#L98)<br>(ES2017) 返回目标对象所有可遍历属性的键值所组成的数组。
 
-1. [Object.entries (obj)](./scripts/object.js#L121)<br>(ES2017) 返回目标对象所有可遍历属性的键值对数组所组成的数组。
+1. [Object.entries (obj)](./scripts/object.js#L122)<br>(ES2017) 返回目标对象所有可遍历属性的键值对数组所组成的数组。
 
-1. [Object.assign (target, sources)](./scripts/object.js#L145)<br>(ES6) 将来自一个或多个源对象中的所有可枚举的属性值复制到目标对象，并返回目标对象。该方法执行的是浅拷贝，相同属性的值将被后来者覆盖，而不会处理子级对象成员的合并。
+1. [Object.assign (target, sources)](./scripts/object.js#L146)<br>(ES6) 将来自一个或多个源对象中的所有可枚举的属性值复制到目标对象，并返回目标对象。该方法执行的是浅拷贝，相同属性的值将被后来者覆盖，而不会处理子级对象成员的合并。
 
-1. [extend (deep, target, sources)](./scripts/object.js#L167)<br>(自定义函数) 将来自一个或多个源对象中的所有可枚举的属性值复制到目标对象，并返回目标对象。该方法可根据deep参数决定是否需要进行数组和对象的深度拷贝。
+1. [extend (deep, target, sources)](./scripts/object.js#L191)<br>(自定义函数) 将来自一个或多个源对象中的所有可枚举的属性值复制到目标对象，并返回目标对象。该方法可根据deep参数决定是否需要进行数组和对象的深度拷贝。
  
 ## String对象
 
