@@ -22,7 +22,7 @@
      * 该方法在ECMAScript6中被提出, 浏览器支持：Chrome 41+、Firefox 40+、Safari 9+，IE不支持
      * @param  {String} [search]   需要检索的字符串，非字符串时将转换为字符串再进行处理
      * @param  {Number} [position] 指定开始查找的索引位置，默认为0（非正数情况一律默认为0）
-     * @return {Boolean}
+     * @return {Boolean}          
      */
     !strPro.includes && (strPro.includes = function(search, position) {
         return this.indexOf(search, position) >= 0;
@@ -33,7 +33,7 @@
      * 该方法在ECMAScript6中被提出, 浏览器支持：Chrome 59+、Firefox 17+
      * @param  {String} [search]   需要检索的字符串，非字符串时将转换为字符串再进行处理
      * @param  {Number} [position] 指定本次检索中“目标字符串”的起始位置，默认为0（非正数情况一律默认为0）
-     * @return {Boolean}
+     * @return {Boolean}          
      */
     !strPro.startsWith && (strPro.startsWith = function(search, position) {
         // 当position参数大于0时，实际上是将该索引位置及后续的所有字符作为新的“目标字符串”后再做判断
@@ -45,7 +45,7 @@
      * 该方法在ECMAScript6中被提出, 浏览器支持：Chrome 59+、Firefox 17+
      * @param  {String} [search]    需要检索的字符串，非字符串时将转换为字符串再进行处理
      * @param  {Number} [position] 指定本次检索中“目标字符串”的结束位置，默认为原字符串的长度（当该值小于1时，将返回false）
-     * @return {Boolean}
+     * @return {Boolean}          
      */
     !strPro.endsWith && (strPro.endsWith = function(search, position) {
         // 当指定了position参数时，实际上是将该索引位置之前的所有字符作为新的“目标字符串”后再做检索判断
@@ -104,8 +104,8 @@
         if(oldLen < targetLen) {
             appendLen = targetLen - oldLen;
             appendStr = new Array(Math.floor(appendLen / strPad.length) + 2).join(strPad);
-            appendStr = appendStr.substring(0, appendLen);
-
+            appendStr = appendStr.substring(0, appendLen);   
+                     
             return dir === 'start' ? (appendStr + oldStr) : (oldStr + appendStr);
         }
 
@@ -114,28 +114,4 @@
 
 })();
 
-
-/**
- * 返回目标字符串的字节长度，一个汉字等于2个字节
- * @param  {string} str 目标字符串
- * @return {number}
- */
-function getByteLen(str) {
-
-    return (str + '').replace(/[^\x00-\xff]/ig, '**').length;
-
-    // 上述方式和下面注释的方式，在运行效率方面不相上下
-    // 但是上述方式代码精简，所以才去最优方案
-    // 
-    // var result = 0,
-    //     testSingle = /[\x00-\xff]/ig, // 匹配单字节
-    //     str = '' + str,
-    //     len = str.length,
-    //     i = 0;
-
-    // for(; i < len; i++) {
-    //     testSingle.lastIndex = 0;
-    //     result += testSingle.test(str[i]) ? 1 : 2;
-    // }
-    // return result;
-}
+ 
