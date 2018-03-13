@@ -125,7 +125,7 @@ function getByteLen(str) {
     return (str + '').replace(/[^\x00-\xff]/ig, '**').length;
 
     // 上述方式和下面注释的方式，在运行效率方面不相上下
-    // 但是上述方式代码精简，所以才去最优方案
+    // 但是上述方式代码精简，所以采取最优方案
     // 
     // var result = 0,
     //     testSingle = /[\x00-\xff]/ig, // 匹配单字节
