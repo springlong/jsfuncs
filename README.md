@@ -39,6 +39,8 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 1. [String.prototype.padStart (targetLen, padStr)](./scripts/string.js#L67)<br>(ES2017) 返回使用填充字符串对目标字符进行前置填充达到指定长度后的新字符串。
 
 1. [String.prototype.padEnd (targetLen, padStr)](./scripts/string.js#L78)<br>(ES2017) 返回使用填充字符串对目标字符进行末尾填充达到指定长度后的新字符串。
+
+1. [getByteLen (str)](./scripts/string.js#L118)<br>(自定义函数) 返回目标字符串的字节长度，一个汉字等于2个字节。
  
 ## Array对象
 
