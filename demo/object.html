@@ -192,6 +192,13 @@
 	console.log(countObjectSize({a:1, b:2}));
 	console.log(countObjectSize([]));
 	console.log(countObjectSize([1,2,3,4,5]));
+
+
+	console.log('================================================');
+	console.log(each());
+	console.log(each([1,2,3,4,5]));
+	console.log(each([1,2,3,4,5], function(val, index, obj){ console.log(val, index, obj);}));
+	console.log(each({a:'1', b:'2', c:'3'}, function(val, index, obj){ console.log(val, index, obj);}));
 </script>
 </body>
 </html>

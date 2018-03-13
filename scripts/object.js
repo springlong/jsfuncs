@@ -254,7 +254,7 @@ function extend () {
 
 
 /**
- * 统计Object对象私有成员的个数，非Object返回0
+ * 统计目标对象的私有成员的个数，非Object类型返回0。
  * 在支持ES5的IE8+等浏览器中可以通过Object.keys(obj).length取得结果
  * @param  {Object} obj 目标对象
  * @return {number}
@@ -273,3 +273,30 @@ function countObjectSize (obj) {
     }
     return len;
 }
+
+
+/**
+ * 遍历目标对象或数组，针对每个私有成员执行回调函数，回调函数返回false则终止遍历。
+ * 与for-in语句不同的是，该方法将不会遍历从prototype继承的成员。
+ * for-in会从原型中查找元素，对于Array.prototype.someProp = function(){}的形式添加的成员，都是可枚举的，都会被for-in遍历到。
+ * 对于支持ES5的IE8+等浏览器中，可以通过Array.prototype.forEach()来进行私有成员的遍历。
+ * 对于支持ES6 Iterator（遍历器）结构的现在浏览器，可以使用for...of进行私有成员的遍历。
+ * @param  {Object|Array}   obj         对象或数组
+ * @param  {Function}       callback    回调函数 callback(val, index, obj)
+ * @return {undefined}
+ */
+function each(obj, callback) {
+
+    if(typeof obj !== 'object' || typeof callback !== 'function') return;
+
+    for(var name in obj) {
+
+        if(Object.prototype.hasOwnProperty.call(obj, name)) {
+
+            if (callback(obj[name], name, obj) === false) {
+                break;
+            }
+        }
+    }
+}
+
