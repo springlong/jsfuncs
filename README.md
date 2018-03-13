@@ -23,6 +23,8 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 1. [Object.assign (target, sources)](./scripts/object.js#L146)<br>(ES6) 将来自一个或多个源对象中的所有可枚举的属性值复制到目标对象，并返回目标对象。该方法执行的是浅拷贝，相同属性的值将被后来者覆盖，而不会处理子级对象成员的合并。
 
 1. [extend (deep, target, sources)](./scripts/object.js#L191)<br>(自定义函数) 将来自一个或多个源对象中的所有可枚举的属性值复制到目标对象，并返回目标对象。该方法可根据deep参数决定是否需要进行数组和对象的深度拷贝。
+
+1. [countObjectSize (obj)](./scripts/object.js#L256)<br>(自定义函数) 统计Object对象私有成员的个数，非Object返回0。在支持ES5的IE8+等浏览器中可以通过`Object.keys(obj).length`取得结果。
  
 ## String对象
 

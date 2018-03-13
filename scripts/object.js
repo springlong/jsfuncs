@@ -251,3 +251,25 @@ function extend () {
     // 将被扩展后的目标对象返回
     return target;
 }
+
+
+/**
+ * 统计Object对象私有成员的个数，非Object返回0
+ * 在支持ES5的IE8+等浏览器中可以通过Object.keys(obj).length取得结果
+ * @param  {Object} obj 目标对象
+ * @return {number}
+ */
+function countObjectSize (obj) {
+
+    var len = 0, name;
+
+    if(typeof obj !== 'object') return len;
+
+    for(name in obj) {
+
+        if(Object.prototype.hasOwnProperty.call(obj, name)) {
+            len++;
+        }
+    }
+    return len;
+}
