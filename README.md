@@ -2,9 +2,24 @@
 
 jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，方便以后需要的时候拿来使用或者起到参考价值。
 
+## 浏览器事件
+
+### [event.js](./scripts/event.js)
+
+兼容IE非标准事件模型的方法封装，对事件绑定、解除绑定、DOMReady事件（DomContentLoaded）、事件对象做了兼容处理。并对老版本Chrome、Safari等浏览器的mouseenter、mouseleave事件提供了支持。该脚本对外提供 `bindEvent()`、 `removeEvent()`、 `bindReady()` 三个方法。
+
+1. [bindEvent (ele, name, handler, capture)](./scripts/event.js)<br> 为目标元素添加事件绑定。
+
+1. [removeEvent (ele, name, handler, capture)](./scripts/event.js#L58)<br> 移除目标元素的事件绑定。
+
+1. [bindReady (handler)](./scripts/event.js#L82)<br> DOM树加载完成时即执行通过bindReady添加的处理程序。
+
+
 ## 类型判断
 
-1. [typecheck.js](./scripts/typecheck.js)<br>提供了`.isStr()`、 `.isNumeric()`、 `.isFunction()`、 `.isArray()`、 `.isArrayLike()`、 `.isDate()`、 `.isPlainObject()`、 `.isEmptyObject()`、 `.isWindow()` 等常用类型判断。
+### [typecheck.js](./scripts/typecheck.js)
+
+提供了`.isStr()`、 `.isNumeric()`、 `.isFunction()`、 `.isArray()`、 `.isArrayLike()`、 `.isDate()`、 `.isPlainObject()`、 `.isEmptyObject()`、 `.isWindow()` 等常用类型判断。
  
 ## Object对象
 
