@@ -14,6 +14,11 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 1. [bindReady (handler)](./scripts/event.js#L82)<br> DOM树加载完成时即执行通过bindReady添加的处理程序。
 
+## 浏览器cookie
+
+### [cookie.js](https://github.com/springlong/cookie.js)
+
+对cookie的增删改查封装函数：`cookie(name, [value, [options]])`。
 
 ## 类型判断
 
