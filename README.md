@@ -20,7 +20,7 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 ## 浏览器cookie
 
-### [cookie.js](https://github.com/springlong/cookie.js)
+### [cookie.js](https://github.com/springlong/cookie.js/blob/master/src/cookie.js)
 
 对cookie的增删改查封装函数：`cookie(name, [value, [options]])`。
 
@@ -128,7 +128,7 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 ## Date对象
 
-### [easydate.js](https://github.com/springlong/easydate.js)
+### [easydate.js](https://github.com/springlong/easydate.js/blob/master/src/easydate.js)
 
 这是一款简易实用的JavaScript日期时间处理工具！
 
