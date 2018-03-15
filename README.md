@@ -2,11 +2,13 @@
 
 jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，方便以后需要的时候拿来使用或者起到参考价值。
 
+
+
 ## 浏览器事件
 
 ### [event.js](./scripts/event.js)
 
-兼容IE非标准事件模型的方法封装，对事件绑定、解除绑定、DOMReady事件（DomContentLoaded）、事件对象做了兼容处理。并对老版本Chrome、Safari等浏览器的mouseenter、mouseleave事件提供了支持。该脚本对外提供 `bindEvent()`、 `removeEvent()`、 `bindReady()` 三个方法。
+兼容IE非标准事件模型的方法封装，对事件绑定、解除绑定、DOMReady事件（DomContentLoaded）、事件对象做了兼容处理。并对老版本Chrome、Safari等浏览器的mouseenter、mouseleave事件提供了支持。该脚本对外提供 `bindEvent()`、 `removeEvent()`、 `bindReady()` 三个方法。点击查看 [demo](//htmlpreview.github.io/?https://github.com/springlong/jsfuncs/blob/master/demo/event.html)。
 
 1. [bindEvent (ele, name, handler, capture)](./scripts/event.js)<br> 为目标元素添加事件绑定。
 
@@ -14,18 +16,26 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 1. [bindReady (handler)](./scripts/event.js#L82)<br> DOM树加载完成时即执行通过bindReady添加的处理程序。
 
+
+
 ## 浏览器cookie
 
 ### [cookie.js](https://github.com/springlong/cookie.js)
 
 对cookie的增删改查封装函数：`cookie(name, [value, [options]])`。
 
+该js作为单独的第三方插件进行使用，点击查看 [更多文档内容](https://github.com/springlong/cookie.js)。
+
+
+
 ## 类型判断
 
 ### [typecheck.js](./scripts/typecheck.js)
 
-提供了`.isStr()`、 `.isNumeric()`、 `.isFunction()`、 `.isArray()`、 `.isArrayLike()`、 `.isDate()`、 `.isPlainObject()`、 `.isEmptyObject()`、 `.isWindow()` 等常用类型判断。
- 
+提供了`.isStr()`、 `.isNumeric()`、 `.isFunction()`、 `.isArray()`、 `.isArrayLike()`、 `.isDate()`、 `.isPlainObject()`、 `.isEmptyObject()`、 `.isWindow()` 等常用类型判断，点击查看 [demo](//htmlpreview.github.io/?https://github.com/springlong/jsfuncs/blob/master/demo/typecheck.html)。
+
+
+
 ## Object对象
 
 1. [Object.create (proto, propertiesObject)](./scripts/object.js)<br>(ES5) 创建一个具有指定原型的新对象并返回。
@@ -48,6 +58,8 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 1. [each (obj)](./scripts/object.js#L278)<br>(自定义函数) 遍历目标对象或数组，针对每个私有成员执行回调函数，回调函数返回false则终止遍历。与for-in语句不同的是，该方法将不会遍历从prototype继承的成员。
  
+
+
 ## String对象
 
 1. [String.prototype.trim ()](./scripts/string.js)<br>(ES5) 去除目标字符串首尾两端的所有空格，并作为新字符串返回。
@@ -66,6 +78,8 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 1. [getByteLen (str)](./scripts/string.js#L118)<br>(自定义函数) 返回目标字符串的字节长度，一个汉字等于2个字节。
  
+
+
 ## Array对象
 
 1. [Array.isArray (source)](./scripts/array.js#L190)<br>(ES5) 判断一个对象的值是否是一个数组（Array类型）。
@@ -100,6 +114,8 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 1. [Array.remove (arr, val)](./scripts/array.js#L227)<br>(自定义扩展) 删除数组中指定的元素值，并返回原数组（原数组中的值将会受到影响）。
 
+
+
 ## Number类型 & Math对象
 
 1. [Number.prototype.toFixed ()](./scripts/number-math.js#L2)<br>(ES3) 修复由于JS浮点数精度的问题导致在某些数值的情况下得不到正确的结果。
@@ -107,4 +123,21 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 1. [randomInt (min, max)](./scripts/number-math.js#L66)<br>(自定义函数) 随机生成位于min~max之间的整数（包括min和max本身）。
 
 1. [commafy (num)](./scripts/number-math.js#L86)<br>(自定义函数) 将目标数值转换为千分位表示法。
+
+
+
+## Date对象
+
+### [easydate.js](https://github.com/springlong/easydate.js)
+
+这是一款简易实用的JavaScript日期时间处理工具！
+
+提供了日期输出的格式化，以及日期时间的加减计算、时差计算、条件判断、链式操作等功能。
+
+一些实用的功能操作通过 `easydate.isValid()`、 `easydate.isLeapYear()`、 `easydate.getWeekth()`、 `easydate.getMonthDays()`、 `easydate.diff()`等静态方法进行便捷调用。
+
+该js作为单独的第三方插件进行使用，点击查看 [更多文档内容](https://github.com/springlong/easydate.js)。
+
+
+
 
