@@ -205,11 +205,11 @@
      */
     Array.unique = function(arr) {
 
-        var output = [],  //最终输出结果
+        var arr = Object.prototype.toString.call(arr) === '[object Array]' ? arr : [],
+            output = [],  //最终输出结果
             result = {},  //用于结果判断
             i = 0,
-            len = arr.length,
-            value;
+            len = arr.length, value;
 
         for(; i < len; ) {
             value = arr[i++];
@@ -233,10 +233,15 @@
      */
     Array.remove = function(arr, val) {
 
-        var idx;
+        var arr = Object.prototype.toString.call(arr) === '[object Array]' ? arr : [],
+            index = 0;
 
-        while((idx = arr.indexOf(val)) !== -1) {
-            arr.splice(idx, 1);
+        while(index < arr.length) {
+            if(arr[index] === val){
+                arr.splice(index, 1);
+            }else{
+                index++;
+            }
         }
 
         return arr;
