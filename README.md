@@ -3,31 +3,6 @@
 jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，方便以后需要的时候拿来使用或者起到参考价值。
 
 
-
-## 浏览器事件
-
-### [event.js](./scripts/event.js)
-
-兼容IE非标准事件模型的方法封装，对事件绑定、解除绑定、DOMReady事件（DomContentLoaded）、事件对象做了兼容处理。并对老版本Chrome、Safari等浏览器的mouseenter、mouseleave事件提供了支持。该脚本对外提供 `bindEvent()`、 `removeEvent()`、 `bindReady()` 三个方法。点击查看 [demo](//htmlpreview.github.io/?https://github.com/springlong/jsfuncs/blob/master/demo/event.html)。
-
-1. [bindEvent (ele, name, handler, capture)](./scripts/event.js)<br> 为目标元素添加事件绑定。
-
-1. [removeEvent (ele, name, handler, capture)](./scripts/event.js#L58)<br> 移除目标元素的事件绑定。
-
-1. [bindReady (handler)](./scripts/event.js#L82)<br> DOM树加载完成时即执行通过bindReady添加的处理程序。
-
-
-
-## 浏览器cookie
-
-### [cookie.js](https://github.com/springlong/cookie.js/blob/master/src/cookie.js)
-
-对cookie的增删改查封装函数：`cookie(name, [value, [options]])`。
-
-该js作为单独的第三方插件进行使用，点击查看 [更多文档内容](https://github.com/springlong/cookie.js)。
-
-
-
 ## 类型判断
 
 ### [typecheck.js](./scripts/typecheck.js)
@@ -37,6 +12,10 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 
 ## Object对象
+
+针对Object对象的ES5、ES6及后续版本新增的实用功能和函数进行的pollyfill。
+
+同时对以往项目中用于Object对象操作的自定义函数也进行了相关汇总。
 
 1. [Object.create (proto, propertiesObject)](./scripts/object.js)<br>(ES5) 创建一个具有指定原型的新对象并返回。
 
@@ -57,10 +36,14 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 1. [countObjectSize (obj)](./scripts/object.js#L256)<br>(自定义函数) 统计目标对象的私有成员的个数，非Object类型返回0。在支持ES5的IE8+等浏览器中可以通过`Object.keys(obj).length`取得结果。
 
 1. [each (obj)](./scripts/object.js#L278)<br>(自定义函数) 遍历目标对象或数组，针对每个私有成员执行回调函数，回调函数返回false则终止遍历。与for-in语句不同的是，该方法将不会遍历从prototype继承的成员。
- 
+
 
 
 ## String对象
+
+针对String对象的ES5、ES6及后续版本新增的实用函数进行的pollyfill。
+
+同时对以往项目中用于字符串操作的自定义函数也进行了相关汇总。
 
 1. [String.prototype.trim ()](./scripts/string.js)<br>(ES5) 去除目标字符串首尾两端的所有空格，并作为新字符串返回。
 
@@ -77,10 +60,14 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 1. [String.prototype.padEnd (targetLen, padStr)](./scripts/string.js#L78)<br>(ES2017) 返回使用填充字符串对目标字符进行末尾填充达到指定长度后的新字符串。
 
 1. [getByteLen (str)](./scripts/string.js#L118)<br>(自定义函数) 返回目标字符串的字节长度，一个汉字等于2个字节。
- 
+
 
 
 ## Array对象
+
+针对Array对象的ES5、ES6及后续版本新增的实用函数进行的pollyfill。
+
+同时对以往项目中用于数组操作的自定义函数也进行了相关汇总。
 
 1. [Array.isArray (source)](./scripts/array.js#L190)<br>(ES5) 判断一个对象的值是否是一个数组（Array类型）。
 
@@ -118,6 +105,8 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 ## Number类型 & Math对象
 
+针对数值相关的函数处理。
+
 1. [Number.prototype.toFixed ()](./scripts/number-math.js#L2)<br>(ES3) 修复由于JS浮点数精度的问题导致在某些数值的情况下得不到正确的结果。
 
 1. [randomInt (min, max)](./scripts/number-math.js#L66)<br>(自定义函数) 随机生成位于min~max之间的整数（包括min和max本身）。
@@ -140,4 +129,24 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 
 
+## 浏览器cookie
 
+### [cookie.js](https://github.com/springlong/cookie.js/blob/master/src/cookie.js)
+
+对cookie的增删改查封装函数：`cookie(name, [value, [options]])`。
+
+该js作为单独的第三方插件进行使用，点击查看 [更多文档内容](https://github.com/springlong/cookie.js)。
+
+
+
+## 浏览器事件
+
+### [event.js](./scripts/event.js)
+
+兼容IE非标准事件模型的方法封装，对事件绑定、解除绑定、DOMReady事件（DomContentLoaded）、事件对象做了兼容处理。并对老版本Chrome、Safari等浏览器的mouseenter、mouseleave事件提供了支持。该脚本对外提供 `bindEvent()`、 `removeEvent()`、 `bindReady()` 三个方法。点击查看 [demo](//htmlpreview.github.io/?https://github.com/springlong/jsfuncs/blob/master/demo/event.html)。
+
+1. [bindEvent (ele, name, handler, capture)](./scripts/event.js)<br> 为目标元素添加事件绑定。
+
+1. [removeEvent (ele, name, handler, capture)](./scripts/event.js#L58)<br> 移除目标元素的事件绑定。
+
+1. [bindReady (handler)](./scripts/event.js#L82)<br> DOM树加载完成时即执行通过bindReady添加的处理程序。
