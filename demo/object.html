@@ -1,204 +1,204 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="utf-8" />
-    <title>Object对象</title>
-    <script src="../scripts/object.js"></script>
-    <script src="../scripts/string.js"></script>
-    <script src="../scripts/array.js"></script>
+   <meta charset="utf-8" />
+   <title>Object对象</title>
+   <script src="../scripts/object.js"></script>
+   <script src="../scripts/string.js"></script>
+   <script src="../scripts/array.js"></script>
 </head>
 <body>
 <script>
-	var obj = {};
+  var obj = {};
 
-	console.log('undefined === undefined  :', undefined === undefined);
-	console.log('null === null  :', null === null);
-	console.log('true === true  :', true === true);
-	console.log('false === false  :', false === false);
-	console.log('true === true  :', true === true);
-	console.log('true === !!1  :', true === !!1);
-	console.log('{} === {}  :', {} === {});
-	console.log('[] === []  :', [] === []);
-	console.log('obj === obj  :', obj === obj);
-	console.log('+0 === -0  :', +0 === -0);
-	console.log('0 === 0  :', 0 === 0);
-	console.log('123 === 123  :', 123 === 123);
-	console.log('"123" === "123"  :', "123" === "123");
-	console.log('123 === "123"  :', 123 === "123");
-	console.log('NaN === NaN  :', NaN === NaN);
-	console.log('NaN === Number(Date)  :', NaN === Number(Date));
-	console.log('NaN === 0/0  :', NaN === 0/0);
-	console.log('Array === Array  :', Array === Array);
+  console.log('undefined === undefined  :', undefined === undefined);
+  console.log('null === null  :', null === null);
+  console.log('true === true  :', true === true);
+  console.log('false === false  :', false === false);
+  console.log('true === true  :', true === true);
+  console.log('true === !!1  :', true === !!1);
+  console.log('{} === {}  :', {} === {});
+  console.log('[] === []  :', [] === []);
+  console.log('obj === obj  :', obj === obj);
+  console.log('+0 === -0  :', +0 === -0);
+  console.log('0 === 0  :', 0 === 0);
+  console.log('123 === 123  :', 123 === 123);
+  console.log('"123" === "123"  :', "123" === "123");
+  console.log('123 === "123"  :', 123 === "123");
+  console.log('NaN === NaN  :', NaN === NaN);
+  console.log('NaN === Number(Date)  :', NaN === Number(Date));
+  console.log('NaN === 0/0  :', NaN === 0/0);
+  console.log('Array === Array  :', Array === Array);
 
-	console.log('================================================');
+  console.log('================================================');
 
-	console.log('undefined, undefined  :', Object.is(undefined, undefined));
-	console.log('null, null  :', Object.is(null, null));
-	console.log('true, true  :', Object.is(true, true));
-	console.log('false, false  :', Object.is(false, false));
-	console.log('true, true  :', Object.is(true, true));
-	console.log('true, !!1  :', Object.is(true, !!1));
-	console.log('{}, {}  :', Object.is({}, {}));
-	console.log('[], []  :', Object.is([], []));
-	console.log('obj, obj  :', Object.is(obj, obj));
-	console.log('+0, -0  :', Object.is(+0, -0));
-	console.log('0, 0  :', Object.is(0, 0));
-	console.log('123, 123  :', Object.is(123, 123));
-	console.log('"123", "123"  :', Object.is("123", "123"));
-	console.log('123, "123"  :', Object.is(123, "123"));
-	console.log('NaN, NaN  :', Object.is(NaN, NaN));
-	console.log('NaN, Number(Date)  :', Object.is(NaN, Number(Date)));
-	console.log('NaN, 0/0  :', Object.is(NaN, 0/0));
-	console.log('Array, Array  :', Object.is(Array, Array));
+  console.log('undefined, undefined  :', Object.is(undefined, undefined));
+  console.log('null, null  :', Object.is(null, null));
+  console.log('true, true  :', Object.is(true, true));
+  console.log('false, false  :', Object.is(false, false));
+  console.log('true, true  :', Object.is(true, true));
+  console.log('true, !!1  :', Object.is(true, !!1));
+  console.log('{}, {}  :', Object.is({}, {}));
+  console.log('[], []  :', Object.is([], []));
+  console.log('obj, obj  :', Object.is(obj, obj));
+  console.log('+0, -0  :', Object.is(+0, -0));
+  console.log('0, 0  :', Object.is(0, 0));
+  console.log('123, 123  :', Object.is(123, 123));
+  console.log('"123", "123"  :', Object.is("123", "123"));
+  console.log('123, "123"  :', Object.is(123, "123"));
+  console.log('NaN, NaN  :', Object.is(NaN, NaN));
+  console.log('NaN, Number(Date)  :', Object.is(NaN, Number(Date)));
+  console.log('NaN, 0/0  :', Object.is(NaN, 0/0));
+  console.log('Array, Array  :', Object.is(Array, Array));
 
-	console.log('================================================');
-	console.log(Object.keys(['a', 'b', 'c']));
-	console.log(Object.keys({a:1, b:2, c:3}));
-	// console.log(Object.keys(false));
-	// console.log(Object.keys(112312));
-	console.log(Object.keys(Date));
-	console.log(Object.keys(window));
+  console.log('================================================');
+  console.log(Object.keys(['a', 'b', 'c']));
+  console.log(Object.keys({a:1, b:2, c:3}));
+  // console.log(Object.keys(false));
+  // console.log(Object.keys(112312));
+  console.log(Object.keys(Date));
+  console.log(Object.keys(window));
 
-	console.log('================================================');
-	console.log(Object.values(['a', 'b', 'c']));
-	console.log(Object.values({a:1, b:2, c:3}));
-	console.log(Object.values(false));
-	console.log(Object.values(112312));
-	console.log(Object.values(Date));
+  console.log('================================================');
+  console.log(Object.values(['a', 'b', 'c']));
+  console.log(Object.values({a:1, b:2, c:3}));
+  console.log(Object.values(false));
+  console.log(Object.values(112312));
+  console.log(Object.values(Date));
 
-	console.log('================================================');
-	console.log(Object.entries(['a', 'b', 'c']));
-	console.log(Object.entries({a:1, b:2, c:3}));
-	console.log(Object.entries(false));
-	console.log(Object.entries(112312));
-	console.log(Object.entries(Date));
+  console.log('================================================');
+  console.log(Object.entries(['a', 'b', 'c']));
+  console.log(Object.entries({a:1, b:2, c:3}));
+  console.log(Object.entries(false));
+  console.log(Object.entries(112312));
+  console.log(Object.entries(Date));
 
-	function fn(){
-		this.name = 'test';
-		this.num = 21;
-	}
-	fn.test1 = '111';
-	fn.test2 = '222';
-	fn.prototype.prop1 = 'a';
-	fn.prototype.prop2 = 'b';
-	fn.prototype.prop3 = 'c';
+  function fn(){
+    this.name = 'test';
+    this.num = 21;
+  }
+  fn.test1 = '111';
+  fn.test2 = '222';
+  fn.prototype.prop1 = 'a';
+  fn.prototype.prop2 = 'b';
+  fn.prototype.prop3 = 'c';
 
-	// Shape - 父类(superclass)
-	function Shape() {
-	  this.x = 0;
-	  this.y = 0;
-	}
+  // Shape - 父类(superclass)
+  function Shape() {
+    this.x = 0;
+    this.y = 0;
+  }
 
-	// 父类的方法
-	Shape.prototype.move = function(x, y) {
-	  this.x += x;
-	  this.y += y;
-	  console.info('Shape moved.');
-	};
+  // 父类的方法
+  Shape.prototype.move = function(x, y) {
+    this.x += x;
+    this.y += y;
+    console.info('Shape moved.');
+  };
 
-	// Rectangle - 子类(subclass)
-	function Rectangle() {
-	  // Shape.call(this); // call super constructor.
-	}
+  // Rectangle - 子类(subclass)
+  function Rectangle() {
+    // Shape.call(this); // call super constructor.
+  }
 
-	console.log('================================================');
-	try{
-		var obj1 = Object.create(fn);
-		var obj2 = Object.create(fn.prototype);
-		var obj3 = Object.create({a:1, b:2});
-		var obj4 = Object.create(null);
-		var obj5 = Object.create({a:1,b:2}, {foo: {value: 'hello', enumerable:true},test: {value: 'dodo', enumerable:false}});
-	}catch(err) {
-		console.log(err);
-	}
+  console.log('================================================');
+  try{
+    var obj1 = Object.create(fn);
+    var obj2 = Object.create(fn.prototype);
+    var obj3 = Object.create({a:1, b:2});
+    var obj4 = Object.create(null);
+    var obj5 = Object.create({a:1,b:2}, {foo: {value: 'hello', enumerable:true},test: {value: 'dodo', enumerable:false}});
+  }catch(err) {
+    console.log(err);
+  }
 
-	console.log('================================================');
-	console.log(Object.getPrototypeOf(obj1));
-	console.log(Object.getPrototypeOf(obj2));
-	console.log(Object.getPrototypeOf(obj3));
-
-
-	// console.log('================================================');
-	// var protest1 = {a:1,b:2};
-	// var protest2 = {a:1,b:2};
-	// var protest3 = {a:1,b:2};
-	// var protest4 = {a:1,b:2};
-	// var protest5 = {a:1,b:2};
-	// console.log(Object.setPrototypeOf(protest1, fn));
-	// console.log(Object.setPrototypeOf(protest2, fn.prototype));
-	// console.log(Object.setPrototypeOf(protest3, {a:1, b:2}));
-	// console.log(Object.setPrototypeOf(protest4, null));
-	// console.log(Object.setPrototypeOf(protest5, Array));
+  console.log('================================================');
+  console.log(Object.getPrototypeOf(obj1));
+  console.log(Object.getPrototypeOf(obj2));
+  console.log(Object.getPrototypeOf(obj3));
 
 
-	console.log('================================================');
-	var assign1 = Object.assign({}, '12345');
-	var assign2 = Object.assign({}, Array);
-	var assign3 = Object.assign({}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
+  // console.log('================================================');
+  // var protest1 = {a:1,b:2};
+  // var protest2 = {a:1,b:2};
+  // var protest3 = {a:1,b:2};
+  // var protest4 = {a:1,b:2};
+  // var protest5 = {a:1,b:2};
+  // console.log(Object.setPrototypeOf(protest1, fn));
+  // console.log(Object.setPrototypeOf(protest2, fn.prototype));
+  // console.log(Object.setPrototypeOf(protest3, {a:1, b:2}));
+  // console.log(Object.setPrototypeOf(protest4, null));
+  // console.log(Object.setPrototypeOf(protest5, Array));
 
 
-	// console.log('================================================');
-	var extend1 = extend({}, '12345');
-	var extend2 = extend({}, Array);
-	var extend3 = extend({}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
-	var extend4 = extend(true, {}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
-	var extend5 = extend(true, {}, 
-								{a:{
-									b:{
-										c:{
-											p1:1,
-											p2:2,
-											p3:3
-										}
-									},
-									b2: {prop: '123'},
-									b3: {}
-								}},
-								{a:{
-									b:{
-										c:{
-											p1:'a', 
-											p2:'b'
-										}
-									}, 
-									b2:{}
-								}});
-	var extend6 = extend(false, {}, 
-								{a:{
-									b:{
-										c:{
-											p1:1,
-											p2:2,
-											p3:3
-										}
-									},
-									b2: {prop: '123'},
-									b3: {}
-								}},
-								{a:{
-									b:{
-										c:{
-											p1:'a', 
-											p2:'b'
-										}
-									}, 
-									b2:{}
-								}});
-
-	console.log('================================================');
-	console.log(countObjectSize());
-	console.log(countObjectSize(null));
-	console.log(countObjectSize({}));
-	console.log(countObjectSize({a:1, b:2}));
-	console.log(countObjectSize([]));
-	console.log(countObjectSize([1,2,3,4,5]));
+  console.log('================================================');
+  var assign1 = Object.assign({}, '12345');
+  var assign2 = Object.assign({}, Array);
+  var assign3 = Object.assign({}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
 
 
-	console.log('================================================');
-	console.log(each());
-	console.log(each([1,2,3,4,5]));
-	console.log(each([1,2,3,4,5], function(val, index, obj){ console.log(val, index, obj);}));
-	console.log(each({a:'1', b:'2', c:'3'}, function(val, index, obj){ console.log(val, index, obj);}));
+  // console.log('================================================');
+  var extend1 = extend({}, '12345');
+  var extend2 = extend({}, Array);
+  var extend3 = extend({}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
+  var extend4 = extend(true, {}, {a:1, b:2, c:3}, {a: '!@#', b:{prop1:'1', prop2:'2'}, c:['a','b','c','d','e']}, {a:false, b:{prop3:3}, c:[1,2,3]});
+  var extend5 = extend(true, {},
+                {a:{
+                  b:{
+                    c:{
+                      p1:1,
+                      p2:2,
+                      p3:3
+                    }
+                  },
+                  b2: {prop: '123'},
+                  b3: {}
+                }},
+                {a:{
+                  b:{
+                    c:{
+                      p1:'a',
+                      p2:'b'
+                    }
+                  },
+                  b2:{}
+                }});
+  var extend6 = extend(false, {},
+                {a:{
+                  b:{
+                    c:{
+                      p1:1,
+                      p2:2,
+                      p3:3
+                    }
+                  },
+                  b2: {prop: '123'},
+                  b3: {}
+                }},
+                {a:{
+                  b:{
+                    c:{
+                      p1:'a',
+                      p2:'b'
+                    }
+                  },
+                  b2:{}
+                }});
+
+  console.log('================================================');
+  console.log(countObjectSize());
+  console.log(countObjectSize(null));
+  console.log(countObjectSize({}));
+  console.log(countObjectSize({a:1, b:2}));
+  console.log(countObjectSize([]));
+  console.log(countObjectSize([1,2,3,4,5]));
+
+
+  console.log('================================================');
+  console.log(each());
+  console.log(each([1,2,3,4,5]));
+  console.log(each([1,2,3,4,5], function(val, index, obj){ console.log(val, index, obj);}));
+  console.log(each({a:'1', b:'2', c:'3'}, function(val, index, obj){ console.log(val, index, obj);}));
 </script>
 </body>
 </html>

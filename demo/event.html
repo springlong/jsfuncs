@@ -1,85 +1,85 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="utf-8" />
-    <title>浏览器事件</title>
-    <style>
-        *{margin:0;padding:0;}
-        h1{font-size:24px;line-height:1.5em;}
-        div{margin:0 auto;font-size:24px;line-height:2em;text-align:center;}
-        p{padding:10px 10px;font-size:14px;line-height:1.5em;}
-        .box{width:980px;margin: 20px auto;}
-        #div1{width:450px;height:450px;background:gray;}
-        #div2{width:300px;height:300px;background:green;}
-        #div3{width:150px;height:150px;background:orange;}
-        .pic{width:700px;}
-        .pic img{width:100px;height:100px;border:2px solid #eee;margin:10px 0 0 10px;}        
-    </style>
-    <script src="../scripts/event.js"></script>
+  <meta charset="utf-8" />
+  <title>浏览器事件</title>
+  <style>
+    *{margin:0;padding:0;}
+    h1{font-size:24px;line-height:1.5em;}
+    div{margin:0 auto;font-size:24px;line-height:2em;text-align:center;}
+    p{padding:10px 10px;font-size:14px;line-height:1.5em;}
+    .box{width:980px;margin: 20px auto;}
+    #div1{width:450px;height:450px;background:gray;}
+    #div2{width:300px;height:300px;background:green;}
+    #div3{width:150px;height:150px;background:orange;}
+    .pic{width:700px;}
+    .pic img{width:100px;height:100px;border:2px solid #eee;margin:10px 0 0 10px;}
+  </style>
+  <script src="../scripts/event.js"></script>
 </head>
 <body>
 <div id="div1">
-    div1
-    <div id="div2">
-        div2
-        <div id="div3">
-            div3
-        </div>
+  div1
+  <div id="div2">
+    div2
+    <div id="div3">
+      div3
     </div>
-    <p id="p1"><a href="http://www.baidu.com/" id="test_a">文本链接</a></p>
-    <p id="p2"><a href="#" id="doRemove">解除绑定</a></p>
+  </div>
+  <p id="p1"><a href="http://www.baidu.com/" id="test_a">文本链接</a></p>
+  <p id="p2"><a href="#" id="doRemove">解除绑定</a></p>
 </div>
 <div class="box">
-    <h2>load、DOMContentLoaded、readystatechange<br>事件的对比情况</h2>
-    <div class="pic">
-        <img id="pic1" src="http://farm4.staticflickr.com/3832/9503903237_9abb2a2fd9_o.jpg" alt="" />
-        <img src="http://farm3.staticflickr.com/2864/9503910629_7b8b7af7ea_o.jpg" alt="" />
-        <img src="http://farm8.staticflickr.com/7453/9503913045_b216c3beca_o.jpg" alt="" />
-        <img src="http://farm3.staticflickr.com/2864/9503910629_7b8b7af7ea_o.jpg" alt="" />
-        <img src="http://farm8.staticflickr.com/7336/9506715892_5e6e5fe541_o.jpg" alt="" />
-    </div>
-    <p><b>加载信息：</b><span id="dataInfo"></span></p>
+  <h2>load、DOMContentLoaded、readystatechange<br>事件的对比情况</h2>
+  <div class="pic">
+    <img id="pic1" src="http://farm4.staticflickr.com/3832/9503903237_9abb2a2fd9_o.jpg" alt="" />
+    <img src="http://farm3.staticflickr.com/2864/9503910629_7b8b7af7ea_o.jpg" alt="" />
+    <img src="http://farm8.staticflickr.com/7453/9503913045_b216c3beca_o.jpg" alt="" />
+    <img src="http://farm3.staticflickr.com/2864/9503910629_7b8b7af7ea_o.jpg" alt="" />
+    <img src="http://farm8.staticflickr.com/7336/9506715892_5e6e5fe541_o.jpg" alt="" />
+  </div>
+  <p><b>加载信息：</b><span id="dataInfo"></span></p>
 </div>
 <script>
-    // 文档加载完成时触发
-    bindEvent(window, 'load', function() {
-        document.getElementById('dataInfo').innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;[load]";
-    });
-    // DOM树完成时触发
-    bindReady(function(ev) {
-        document.getElementById('dataInfo').innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;[DOMContentLoaded]";
-    });
-    // 文档加载状态变更时触发
-    bindEvent(document, 'readystatechange', function() {
-        document.getElementById('dataInfo').innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;[readystatechange:" + document.readyState + "]";
-    });
+  // 文档加载完成时触发
+  bindEvent(window, 'load', function() {
+    document.getElementById('dataInfo').innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;[load]";
+  });
+  // DOM树完成时触发
+  bindReady(function(ev) {
+    document.getElementById('dataInfo').innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;[DOMContentLoaded]";
+  });
+  // 文档加载状态变更时触发
+  bindEvent(document, 'readystatechange', function() {
+    document.getElementById('dataInfo').innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;[readystatechange:" + document.readyState + "]";
+  });
 </script>
 <script>
-    var handlerDiv1 = bindEvent(document.getElementById('div1'), 'click', function(ev) {
-        console.log(ev);
-        console.log('div1 | type:' + ev.type, '| target:' + ev.target.id);
-    }, false);
+  var handlerDiv1 = bindEvent(document.getElementById('div1'), 'click', function(ev) {
+    console.log(ev);
+    console.log('div1 | type:' + ev.type, '| target:' + ev.target.id);
+  }, false);
 
-    bindEvent(document.getElementById('div2'), 'click', function(ev) {
-        console.log('div2 | type:' + ev.type, '| target:' + ev.target.id);
-    }, false);
+  bindEvent(document.getElementById('div2'), 'click', function(ev) {
+    console.log('div2 | type:' + ev.type, '| target:' + ev.target.id);
+  }, false);
 
-    bindEvent(document.getElementById('div3'), 'click', function(ev) {
-        console.log('div3 | type:' + ev.type, '| target:' + ev.target.id);
-    }, false);
+  bindEvent(document.getElementById('div3'), 'click', function(ev) {
+    console.log('div3 | type:' + ev.type, '| target:' + ev.target.id);
+  }, false);
 
-    bindEvent(document.getElementById('doRemove'), 'click', function(ev) {
-        removeEvent(document.getElementById('div1'), 'click', handlerDiv1);
-    });
+  bindEvent(document.getElementById('doRemove'), 'click', function(ev) {
+    removeEvent(document.getElementById('div1'), 'click', handlerDiv1);
+  });
 
-    bindEvent(document.getElementById('test_a'), 'click', function(ev) {
+  bindEvent(document.getElementById('test_a'), 'click', function(ev) {
 
-        // 取消默认行为
-        ev.preventDefault();
+    // 取消默认行为
+    ev.preventDefault();
 
-        // // 阻止事件冒泡
-        ev.stopPropagation();
-    });
+    // // 阻止事件冒泡
+    ev.stopPropagation();
+  });
 </script>
 </body>
 </html>

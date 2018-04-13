@@ -1,243 +1,243 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <title>类型判断</title>
-    <style type="text/css">
-        *{margin:0;padding:0;}
-        body{padding-bottom:50px;font-size:14px;line-height:24px;}
-        section{display:block;}
-        p{margin:20px 0;}
+  <meta charset="utf-8">
+  <title>类型判断</title>
+  <style type="text/css">
+    *{margin:0;padding:0;}
+    body{padding-bottom:50px;font-size:14px;line-height:24px;}
+    section{display:block;}
+    p{margin:20px 0;}
 
-        #container{width:980px;margin:10px auto 0;}
-        #container h2{padding-bottom:10px;margin-top:30px;}
-        #container div{overflow:auto;height:200px;padding-left:20px;border:1px solid gray;background:#eee;}
-        #container p{font-family:"Courier New";}
-        #container p span{display:inline-block;width:260px;text-align:left;}
-        #container p strong{display:inline-block;width:30px;text-align:right;}
-        #container p strong.true{color:red;}
-    </style>
-    <script src="../scripts/typecheck.js"></script>
+    #container{width:980px;margin:10px auto 0;}
+    #container h2{padding-bottom:10px;margin-top:30px;}
+    #container div{overflow:auto;height:200px;padding-left:20px;border:1px solid gray;background:#eee;}
+    #container p{font-family:"Courier New";}
+    #container p span{display:inline-block;width:260px;text-align:left;}
+    #container p strong{display:inline-block;width:30px;text-align:right;}
+    #container p strong.true{color:red;}
+  </style>
+  <script src="../scripts/typecheck.js"></script>
 </head>
 <body>
 <div id="container">
-    <script type="text/javascript">
-        document.write("<h2>字符串：</h2><div><p><span>type.isStr('asdfasdf'):</span><strong class='true'>" + type.isStr("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.isStr('   '):</span><strong class='true'>" + type.isStr("   ") + "</strong></p>");
-        document.write("<p><span>type.isStr(123):</span><strong>" + type.isStr(123) + "</strong></p>");
-        document.write("<p><span>type.isStr(NaN):</span><strong>" + type.isStr(NaN) + "</strong></p>");
-        document.write("<p><span>type.isStr(true):</span><strong>" + type.isStr(true) + "</strong></p>");
-        document.write("<p><span>type.isStr(null):</span><strong>" + type.isStr(null) + "</strong></p>");
-        document.write("<p><span>type.isStr(undefined):</span><strong>" + type.isStr(undefined) + "</strong></p>");
-        document.write("<p><span>type.isStr([1,2,3]):</span><strong>" + type.isStr([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.isStr(function(){}):</span><strong>" + type.isStr(function(){}) + "</strong></p>");
-        document.write("<p><span>type.isStr({a:1, b:2}):</span><strong>" + type.isStr({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.isStr(new Date()):</span><strong>" + type.isStr(new Date()) + "</strong></p>");
-        document.write("<p><span>type.isStr('2012/01/23'):</span><strong class='true'>" + type.isStr("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.isStr('2012-01-23'):</span><strong class='true'>" + type.isStr("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.isStr(Math):</span><strong>" + type.isStr(Math) + "</strong></p>");
-        document.write("<p><span>type.isStr(/\s*/):</span><strong>" + type.isStr(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.isStr(window):</span><strong>" + type.isStr(window) + "</strong></p>");
-        document.write("<p><span>type.isStr(document.body):</span><strong>" + type.isStr(document.body) + "</strong></p></div>");
+  <script type="text/javascript">
+    document.write("<h2>字符串：</h2><div><p><span>type.isStr('asdfasdf'):</span><strong class='true'>" + type.isStr("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.isStr('   '):</span><strong class='true'>" + type.isStr("   ") + "</strong></p>");
+    document.write("<p><span>type.isStr(123):</span><strong>" + type.isStr(123) + "</strong></p>");
+    document.write("<p><span>type.isStr(NaN):</span><strong>" + type.isStr(NaN) + "</strong></p>");
+    document.write("<p><span>type.isStr(true):</span><strong>" + type.isStr(true) + "</strong></p>");
+    document.write("<p><span>type.isStr(null):</span><strong>" + type.isStr(null) + "</strong></p>");
+    document.write("<p><span>type.isStr(undefined):</span><strong>" + type.isStr(undefined) + "</strong></p>");
+    document.write("<p><span>type.isStr([1,2,3]):</span><strong>" + type.isStr([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.isStr(function(){}):</span><strong>" + type.isStr(function(){}) + "</strong></p>");
+    document.write("<p><span>type.isStr({a:1, b:2}):</span><strong>" + type.isStr({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isStr(new Date()):</span><strong>" + type.isStr(new Date()) + "</strong></p>");
+    document.write("<p><span>type.isStr('2012/01/23'):</span><strong class='true'>" + type.isStr("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.isStr('2012-01-23'):</span><strong class='true'>" + type.isStr("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.isStr(Math):</span><strong>" + type.isStr(Math) + "</strong></p>");
+    document.write("<p><span>type.isStr(/\s*/):</span><strong>" + type.isStr(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.isStr(window):</span><strong>" + type.isStr(window) + "</strong></p>");
+    document.write("<p><span>type.isStr(document.body):</span><strong>" + type.isStr(document.body) + "</strong></p></div>");
 
-        document.write("<h2>有效字符串（即非全空格成员）：</h2><div><p><span>type.isValidStr('asdfasdf'):</span><strong class='true'>" + type.isValidStr("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.isValidStr('   '):</span><strong>" + type.isValidStr("   ") + "</strong></p>");
-        document.write("<p><span>type.isValidStr(123):</span><strong>" + type.isValidStr(123) + "</strong></p>");
-        document.write("<p><span>type.isValidStr(NaN):</span><strong>" + type.isValidStr(NaN) + "</strong></p>");
-        document.write("<p><span>type.isValidStr(true):</span><strong>" + type.isValidStr(true) + "</strong></p>");
-        document.write("<p><span>type.isValidStr(null):</span><strong>" + type.isValidStr(null) + "</strong></p>");
-        document.write("<p><span>type.isValidStr(undefined):</span><strong>" + type.isValidStr(undefined) + "</strong></p>");
-        document.write("<p><span>type.isValidStr([1,2,3]):</span><strong>" + type.isValidStr([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.isValidStr(function(){}):</span><strong>" + type.isValidStr(function(){}) + "</strong></p>");
-        document.write("<p><span>type.isValidStr({a:1, b:2}):</span><strong>" + type.isValidStr({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.isValidStr(new Date()):</span><strong>" + type.isValidStr(new Date()) + "</strong></p>");
-        document.write("<p><span>type.isValidStr('2012/01/23'):</span><strong class='true'>" + type.isValidStr("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.isValidStr('2012-01-23'):</span><strong class='true'>" + type.isValidStr("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.isValidStr(Math):</span><strong>" + type.isValidStr(Math) + "</strong></p>");
-        document.write("<p><span>type.isValidStr(/\s*/):</span><strong>" + type.isValidStr(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.isValidStr(window):</span><strong>" + type.isValidStr(window) + "</strong></p>");
-        document.write("<p><span>type.isValidStr(document.body):</span><strong>" + type.isValidStr(document.body) + "</strong></p></div>");
+    document.write("<h2>有效字符串（即非全空格成员）：</h2><div><p><span>type.isValidStr('asdfasdf'):</span><strong class='true'>" + type.isValidStr("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.isValidStr('   '):</span><strong>" + type.isValidStr("   ") + "</strong></p>");
+    document.write("<p><span>type.isValidStr(123):</span><strong>" + type.isValidStr(123) + "</strong></p>");
+    document.write("<p><span>type.isValidStr(NaN):</span><strong>" + type.isValidStr(NaN) + "</strong></p>");
+    document.write("<p><span>type.isValidStr(true):</span><strong>" + type.isValidStr(true) + "</strong></p>");
+    document.write("<p><span>type.isValidStr(null):</span><strong>" + type.isValidStr(null) + "</strong></p>");
+    document.write("<p><span>type.isValidStr(undefined):</span><strong>" + type.isValidStr(undefined) + "</strong></p>");
+    document.write("<p><span>type.isValidStr([1,2,3]):</span><strong>" + type.isValidStr([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.isValidStr(function(){}):</span><strong>" + type.isValidStr(function(){}) + "</strong></p>");
+    document.write("<p><span>type.isValidStr({a:1, b:2}):</span><strong>" + type.isValidStr({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isValidStr(new Date()):</span><strong>" + type.isValidStr(new Date()) + "</strong></p>");
+    document.write("<p><span>type.isValidStr('2012/01/23'):</span><strong class='true'>" + type.isValidStr("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.isValidStr('2012-01-23'):</span><strong class='true'>" + type.isValidStr("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.isValidStr(Math):</span><strong>" + type.isValidStr(Math) + "</strong></p>");
+    document.write("<p><span>type.isValidStr(/\s*/):</span><strong>" + type.isValidStr(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.isValidStr(window):</span><strong>" + type.isValidStr(window) + "</strong></p>");
+    document.write("<p><span>type.isValidStr(document.body):</span><strong>" + type.isValidStr(document.body) + "</strong></p></div>");
 
-        document.write("<h2>有效数字：</h2><div><p><span>type.isNumeric('asdfasdf'):</span><strong>" + type.isNumeric("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.isNumeric('   '):</span><strong>" + type.isNumeric("   ") + "</strong></p>");
-        document.write("<p><span>type.isNumeric(123):</span><strong class='true'>" + type.isNumeric(123) + "</strong></p>");
-        document.write("<p><span>type.isNumeric(NaN):</span><strong>" + type.isNumeric(NaN) + "</strong></p>");
-        document.write("<p><span>type.isNumeric(true):</span><strong>" + type.isNumeric(true) + "</strong></p>");
-        document.write("<p><span>type.isNumeric(null):</span><strong>" + type.isNumeric(null) + "</strong></p>");
-        document.write("<p><span>type.isNumeric(undefined):</span><strong>" + type.isNumeric(undefined) + "</strong></p>");
-        document.write("<p><span>type.isNumeric([1,2,3]):</span><strong>" + type.isNumeric([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.isNumeric(function(){}):</span><strong>" + type.isNumeric(function(){}) + "</strong></p>");
-        document.write("<p><span>type.isNumeric({a:1, b:2}):</span><strong>" + type.isNumeric({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.isNumeric(new Date()):</span><strong>" + type.isNumeric(new Date()) + "</strong></p>");
-        document.write("<p><span>type.isNumeric('2012/01/23'):</span><strong>" + type.isNumeric("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.isNumeric('2012-01-23'):</span><strong>" + type.isNumeric("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.isNumeric(Math):</span><strong>" + type.isNumeric(Math) + "</strong></p>");
-        document.write("<p><span>type.isNumeric(/\s*/):</span><strong>" + type.isNumeric(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.isNumeric(window):</span><strong>" + type.isNumeric(window) + "</strong></p>");
-        document.write("<p><span>type.isNumeric(document.body):</span><strong>" + type.isNumeric(document.body) + "</strong></p></div>");
+    document.write("<h2>有效数字：</h2><div><p><span>type.isNumeric('asdfasdf'):</span><strong>" + type.isNumeric("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.isNumeric('   '):</span><strong>" + type.isNumeric("   ") + "</strong></p>");
+    document.write("<p><span>type.isNumeric(123):</span><strong class='true'>" + type.isNumeric(123) + "</strong></p>");
+    document.write("<p><span>type.isNumeric(NaN):</span><strong>" + type.isNumeric(NaN) + "</strong></p>");
+    document.write("<p><span>type.isNumeric(true):</span><strong>" + type.isNumeric(true) + "</strong></p>");
+    document.write("<p><span>type.isNumeric(null):</span><strong>" + type.isNumeric(null) + "</strong></p>");
+    document.write("<p><span>type.isNumeric(undefined):</span><strong>" + type.isNumeric(undefined) + "</strong></p>");
+    document.write("<p><span>type.isNumeric([1,2,3]):</span><strong>" + type.isNumeric([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.isNumeric(function(){}):</span><strong>" + type.isNumeric(function(){}) + "</strong></p>");
+    document.write("<p><span>type.isNumeric({a:1, b:2}):</span><strong>" + type.isNumeric({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isNumeric(new Date()):</span><strong>" + type.isNumeric(new Date()) + "</strong></p>");
+    document.write("<p><span>type.isNumeric('2012/01/23'):</span><strong>" + type.isNumeric("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.isNumeric('2012-01-23'):</span><strong>" + type.isNumeric("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.isNumeric(Math):</span><strong>" + type.isNumeric(Math) + "</strong></p>");
+    document.write("<p><span>type.isNumeric(/\s*/):</span><strong>" + type.isNumeric(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.isNumeric(window):</span><strong>" + type.isNumeric(window) + "</strong></p>");
+    document.write("<p><span>type.isNumeric(document.body):</span><strong>" + type.isNumeric(document.body) + "</strong></p></div>");
 
-        document.write("<h2>日期：</h2><div><p><span>type.isDate('asdfasdf'):</span><strong>" + type.isDate("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.isDate('   '):</span><strong>" + type.isDate("   ") + "</strong></p>");
-        document.write("<p><span>type.isDate(new Date()):</span><strong class='true'>" + type.isDate(new Date()) + "</strong></p>");
-        document.write("<p><span>type.isDate('2012/01/23'):</span><strong>" + type.isDate("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.isDate('2012-01-23'):</span><strong>" + type.isDate("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.isDate(123):</span><strong>" + type.isDate(123) + "</strong></p>");
-        document.write("<p><span>type.isDate(NaN):</span><strong>" + type.isDate(NaN) + "</strong></p>");
-        document.write("<p><span>type.isDate(true):</span><strong>" + type.isDate(true) + "</strong></p>");
-        document.write("<p><span>type.isDate(null):</span><strong>" + type.isDate(null) + "</strong></p>");
-        document.write("<p><span>type.isDate(undefined):</span><strong>" + type.isDate(undefined) + "</strong></p>");
-        document.write("<p><span>type.isDate([1,2,3]):</span><strong>" + type.isDate([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.isDate(function(){}):</span><strong>" + type.isDate(function(){}) + "</strong></p>");
-        document.write("<p><span>type.isDate({a:1, b:2}):</span><strong>" + type.isDate({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.isDate(Math):</span><strong>" + type.isDate(Math) + "</strong></p>");
-        document.write("<p><span>type.isDate(/\s*/):</span><strong>" + type.isDate(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.isDate(window):</span><strong>" + type.isDate(window) + "</strong></p>");
-        document.write("<p><span>type.isDate(document.body):</span><strong>" + type.isDate(document.body) + "</strong></p></div>");
+    document.write("<h2>日期：</h2><div><p><span>type.isDate('asdfasdf'):</span><strong>" + type.isDate("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.isDate('   '):</span><strong>" + type.isDate("   ") + "</strong></p>");
+    document.write("<p><span>type.isDate(new Date()):</span><strong class='true'>" + type.isDate(new Date()) + "</strong></p>");
+    document.write("<p><span>type.isDate('2012/01/23'):</span><strong>" + type.isDate("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.isDate('2012-01-23'):</span><strong>" + type.isDate("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.isDate(123):</span><strong>" + type.isDate(123) + "</strong></p>");
+    document.write("<p><span>type.isDate(NaN):</span><strong>" + type.isDate(NaN) + "</strong></p>");
+    document.write("<p><span>type.isDate(true):</span><strong>" + type.isDate(true) + "</strong></p>");
+    document.write("<p><span>type.isDate(null):</span><strong>" + type.isDate(null) + "</strong></p>");
+    document.write("<p><span>type.isDate(undefined):</span><strong>" + type.isDate(undefined) + "</strong></p>");
+    document.write("<p><span>type.isDate([1,2,3]):</span><strong>" + type.isDate([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.isDate(function(){}):</span><strong>" + type.isDate(function(){}) + "</strong></p>");
+    document.write("<p><span>type.isDate({a:1, b:2}):</span><strong>" + type.isDate({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isDate(Math):</span><strong>" + type.isDate(Math) + "</strong></p>");
+    document.write("<p><span>type.isDate(/\s*/):</span><strong>" + type.isDate(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.isDate(window):</span><strong>" + type.isDate(window) + "</strong></p>");
+    document.write("<p><span>type.isDate(document.body):</span><strong>" + type.isDate(document.body) + "</strong></p></div>");
 
-        document.write("<h2>日期字符串，如“2012-03-26”、“2012-3-26”、“2013/03/26”、“2013/3/26”：</h2><div><p><span>type.isDateStr('asdfasdf'):</span><strong>" + type.isDateStr("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.isDateStr('   '):</span><strong>" + type.isDateStr("   ") + "</strong></p>");
-        document.write("<p><span>type.isDateStr(new Date()):</span><strong>" + type.isDateStr(new Date()) + "</strong></p>");
-        document.write("<p><span>type.isDateStr('2012/01/23'):</span><strong class='true'>" + type.isDateStr("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.isDateStr('2012-01-23'):</span><strong class='true'>" + type.isDateStr("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.isDateStr(123):</span><strong>" + type.isDateStr(123) + "</strong></p>");
-        document.write("<p><span>type.isDateStr(NaN):</span><strong>" + type.isDateStr(NaN) + "</strong></p>");
-        document.write("<p><span>type.isDateStr(true):</span><strong>" + type.isDateStr(true) + "</strong></p>");
-        document.write("<p><span>type.isDateStr(null):</span><strong>" + type.isDateStr(null) + "</strong></p>");
-        document.write("<p><span>type.isDateStr(undefined):</span><strong>" + type.isDateStr(undefined) + "</strong></p>");
-        document.write("<p><span>type.isDateStr([1,2,3]):</span><strong>" + type.isDateStr([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.isDateStr(function(){}):</span><strong>" + type.isDateStr(function(){}) + "</strong></p>");
-        document.write("<p><span>type.isDateStr({a:1, b:2}):</span><strong>" + type.isDateStr({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.isDateStr(Math):</span><strong>" + type.isDateStr(Math) + "</strong></p>");
-        document.write("<p><span>type.isDateStr(/\s*/):</span><strong>" + type.isDateStr(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.isDateStr(window):</span><strong>" + type.isDateStr(window) + "</strong></p>");
-        document.write("<p><span>type.isDateStr(document.body):</span><strong>" + type.isDateStr(document.body) + "</strong></p></div>");
+    document.write("<h2>日期字符串，如“2012-03-26”、“2012-3-26”、“2013/03/26”、“2013/3/26”：</h2><div><p><span>type.isDateStr('asdfasdf'):</span><strong>" + type.isDateStr("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.isDateStr('   '):</span><strong>" + type.isDateStr("   ") + "</strong></p>");
+    document.write("<p><span>type.isDateStr(new Date()):</span><strong>" + type.isDateStr(new Date()) + "</strong></p>");
+    document.write("<p><span>type.isDateStr('2012/01/23'):</span><strong class='true'>" + type.isDateStr("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.isDateStr('2012-01-23'):</span><strong class='true'>" + type.isDateStr("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.isDateStr(123):</span><strong>" + type.isDateStr(123) + "</strong></p>");
+    document.write("<p><span>type.isDateStr(NaN):</span><strong>" + type.isDateStr(NaN) + "</strong></p>");
+    document.write("<p><span>type.isDateStr(true):</span><strong>" + type.isDateStr(true) + "</strong></p>");
+    document.write("<p><span>type.isDateStr(null):</span><strong>" + type.isDateStr(null) + "</strong></p>");
+    document.write("<p><span>type.isDateStr(undefined):</span><strong>" + type.isDateStr(undefined) + "</strong></p>");
+    document.write("<p><span>type.isDateStr([1,2,3]):</span><strong>" + type.isDateStr([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.isDateStr(function(){}):</span><strong>" + type.isDateStr(function(){}) + "</strong></p>");
+    document.write("<p><span>type.isDateStr({a:1, b:2}):</span><strong>" + type.isDateStr({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isDateStr(Math):</span><strong>" + type.isDateStr(Math) + "</strong></p>");
+    document.write("<p><span>type.isDateStr(/\s*/):</span><strong>" + type.isDateStr(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.isDateStr(window):</span><strong>" + type.isDateStr(window) + "</strong></p>");
+    document.write("<p><span>type.isDateStr(document.body):</span><strong>" + type.isDateStr(document.body) + "</strong></p></div>");
 
-        document.write("<h2>函数：</h2><div><p><span>type.isFunction('asdfasdf'):</span><strong>" + type.isFunction("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.isFunction('   '):</span><strong>" + type.isFunction("   ") + "</strong></p>");
-        document.write("<p><span>type.isFunction(function(){}):</span><strong class='true'>" + type.isFunction(function(){}) + "</strong></p>");
-        document.write("<p><span>type.isFunction(123):</span><strong>" + type.isFunction(123) + "</strong></p>");
-        document.write("<p><span>type.isFunction(NaN):</span><strong>" + type.isFunction(NaN) + "</strong></p>");
-        document.write("<p><span>type.isFunction(true):</span><strong>" + type.isFunction(true) + "</strong></p>");
-        document.write("<p><span>type.isFunction(null):</span><strong>" + type.isFunction(null) + "</strong></p>");
-        document.write("<p><span>type.isFunction(undefined):</span><strong>" + type.isFunction(undefined) + "</strong></p>");
-        document.write("<p><span>type.isFunction([1,2,3]):</span><strong>" + type.isFunction([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.isFunction({a:1, b:2}):</span><strong>" + type.isFunction({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.isFunction(new Date()):</span><strong>" + type.isFunction(new Date()) + "</strong></p>");
-        document.write("<p><span>type.isFunction('2012/01/23'):</span><strong>" + type.isFunction("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.isFunction('2012-01-23'):</span><strong>" + type.isFunction("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.isFunction(Math):</span><strong>" + type.isFunction(Math) + "</strong></p>");
-        document.write("<p><span>type.isFunction(/\s*/):</span><strong>" + type.isFunction(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.isFunction(window):</span><strong>" + type.isFunction(window) + "</strong></p>");
-        document.write("<p><span>type.isFunction(document.body):</span><strong>" + type.isFunction(document.body) + "</strong></p></div>");
+    document.write("<h2>函数：</h2><div><p><span>type.isFunction('asdfasdf'):</span><strong>" + type.isFunction("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.isFunction('   '):</span><strong>" + type.isFunction("   ") + "</strong></p>");
+    document.write("<p><span>type.isFunction(function(){}):</span><strong class='true'>" + type.isFunction(function(){}) + "</strong></p>");
+    document.write("<p><span>type.isFunction(123):</span><strong>" + type.isFunction(123) + "</strong></p>");
+    document.write("<p><span>type.isFunction(NaN):</span><strong>" + type.isFunction(NaN) + "</strong></p>");
+    document.write("<p><span>type.isFunction(true):</span><strong>" + type.isFunction(true) + "</strong></p>");
+    document.write("<p><span>type.isFunction(null):</span><strong>" + type.isFunction(null) + "</strong></p>");
+    document.write("<p><span>type.isFunction(undefined):</span><strong>" + type.isFunction(undefined) + "</strong></p>");
+    document.write("<p><span>type.isFunction([1,2,3]):</span><strong>" + type.isFunction([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.isFunction({a:1, b:2}):</span><strong>" + type.isFunction({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isFunction(new Date()):</span><strong>" + type.isFunction(new Date()) + "</strong></p>");
+    document.write("<p><span>type.isFunction('2012/01/23'):</span><strong>" + type.isFunction("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.isFunction('2012-01-23'):</span><strong>" + type.isFunction("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.isFunction(Math):</span><strong>" + type.isFunction(Math) + "</strong></p>");
+    document.write("<p><span>type.isFunction(/\s*/):</span><strong>" + type.isFunction(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.isFunction(window):</span><strong>" + type.isFunction(window) + "</strong></p>");
+    document.write("<p><span>type.isFunction(document.body):</span><strong>" + type.isFunction(document.body) + "</strong></p></div>");
 
-        document.write("<h2>数组：</h2><div><p><span>type.isArray('asdfasdf'):</span><strong>" + type.isArray("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.isArray('   '):</span><strong>" + type.isArray("   ") + "</strong></p>");
-        document.write("<p><span>type.isArray([1,2,3]):</span><strong class='true'>" + type.isArray([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.isArray(123):</span><strong>" + type.isArray(123) + "</strong></p>");
-        document.write("<p><span>type.isArray(NaN):</span><strong>" + type.isArray(NaN) + "</strong></p>");
-        document.write("<p><span>type.isArray(true):</span><strong>" + type.isArray(true) + "</strong></p>");
-        document.write("<p><span>type.isArray(null):</span><strong>" + type.isArray(null) + "</strong></p>");
-        document.write("<p><span>type.isArray(undefined):</span><strong>" + type.isArray(undefined) + "</strong></p>");
-        document.write("<p><span>type.isArray(function(){}):</span><strong>" + type.isArray(function(){}) + "</strong></p>");
-        document.write("<p><span>type.isArray({a:1, b:2}):</span><strong>" + type.isArray({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.isArray(new Date()):</span><strong>" + type.isArray(new Date()) + "</strong></p>");
-        document.write("<p><span>type.isArray('2012/01/23'):</span><strong>" + type.isArray("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.isArray('2012-01-23'):</span><strong>" + type.isArray("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.isArray(Math):</span><strong>" + type.isArray(Math) + "</strong></p>");
-        document.write("<p><span>type.isArray(/\s*/):</span><strong>" + type.isArray(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.isArray(window):</span><strong>" + type.isArray(window) + "</strong></p>");
-        document.write("<p><span>type.isArray(document.body):</span><strong>" + type.isArray(document.body) + "</strong></p></div>");
+    document.write("<h2>数组：</h2><div><p><span>type.isArray('asdfasdf'):</span><strong>" + type.isArray("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.isArray('   '):</span><strong>" + type.isArray("   ") + "</strong></p>");
+    document.write("<p><span>type.isArray([1,2,3]):</span><strong class='true'>" + type.isArray([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.isArray(123):</span><strong>" + type.isArray(123) + "</strong></p>");
+    document.write("<p><span>type.isArray(NaN):</span><strong>" + type.isArray(NaN) + "</strong></p>");
+    document.write("<p><span>type.isArray(true):</span><strong>" + type.isArray(true) + "</strong></p>");
+    document.write("<p><span>type.isArray(null):</span><strong>" + type.isArray(null) + "</strong></p>");
+    document.write("<p><span>type.isArray(undefined):</span><strong>" + type.isArray(undefined) + "</strong></p>");
+    document.write("<p><span>type.isArray(function(){}):</span><strong>" + type.isArray(function(){}) + "</strong></p>");
+    document.write("<p><span>type.isArray({a:1, b:2}):</span><strong>" + type.isArray({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isArray(new Date()):</span><strong>" + type.isArray(new Date()) + "</strong></p>");
+    document.write("<p><span>type.isArray('2012/01/23'):</span><strong>" + type.isArray("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.isArray('2012-01-23'):</span><strong>" + type.isArray("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.isArray(Math):</span><strong>" + type.isArray(Math) + "</strong></p>");
+    document.write("<p><span>type.isArray(/\s*/):</span><strong>" + type.isArray(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.isArray(window):</span><strong>" + type.isArray(window) + "</strong></p>");
+    document.write("<p><span>type.isArray(document.body):</span><strong>" + type.isArray(document.body) + "</strong></p></div>");
 
-        document.write("<h2>数组相似（即包含length属性，且该值为数字类型。window和function除外）：</h2><div><p><span>type.isArrayLike('asdfasdf'):</span><strong class='true'>" + type.isArrayLike("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.isArrayLike('   '):</span><strong class='true'>" + type.isArrayLike("   ") + "</strong></p>");
-        document.write("<p><span>type.isArrayLike([1,2,3]):</span><strong class='true'>" + type.isArrayLike([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike(123):</span><strong>" + type.isArrayLike(123) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike(NaN):</span><strong>" + type.isArrayLike(NaN) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike(true):</span><strong>" + type.isArrayLike(true) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike(null):</span><strong>" + type.isArrayLike(null) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike(undefined):</span><strong>" + type.isArrayLike(undefined) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike(function(){}):</span><strong>" + type.isArrayLike(function(){}) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike({a:1, b:2}):</span><strong>" + type.isArrayLike({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike(new Date()):</span><strong>" + type.isArrayLike(new Date()) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike('2012/01/23'):</span><strong class='true'>" + type.isArrayLike("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.isArrayLike('2012-01-23'):</span><strong class='true'>" + type.isArrayLike("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.isArrayLike(Math):</span><strong>" + type.isArrayLike(Math) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike(/\s*/):</span><strong>" + type.isArrayLike(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike(window):</span><strong>" + type.isArrayLike(window) + "</strong></p>");
-        document.write("<p><span>type.isArrayLike(document.body):</span><strong>" + type.isArrayLike(document.body) + "</strong></p></div>");
+    document.write("<h2>数组相似（即包含length属性，且该值为数字类型。window和function除外）：</h2><div><p><span>type.isArrayLike('asdfasdf'):</span><strong class='true'>" + type.isArrayLike("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.isArrayLike('   '):</span><strong class='true'>" + type.isArrayLike("   ") + "</strong></p>");
+    document.write("<p><span>type.isArrayLike([1,2,3]):</span><strong class='true'>" + type.isArrayLike([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike(123):</span><strong>" + type.isArrayLike(123) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike(NaN):</span><strong>" + type.isArrayLike(NaN) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike(true):</span><strong>" + type.isArrayLike(true) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike(null):</span><strong>" + type.isArrayLike(null) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike(undefined):</span><strong>" + type.isArrayLike(undefined) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike(function(){}):</span><strong>" + type.isArrayLike(function(){}) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike({a:1, b:2}):</span><strong>" + type.isArrayLike({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike(new Date()):</span><strong>" + type.isArrayLike(new Date()) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike('2012/01/23'):</span><strong class='true'>" + type.isArrayLike("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.isArrayLike('2012-01-23'):</span><strong class='true'>" + type.isArrayLike("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.isArrayLike(Math):</span><strong>" + type.isArrayLike(Math) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike(/\s*/):</span><strong>" + type.isArrayLike(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike(window):</span><strong>" + type.isArrayLike(window) + "</strong></p>");
+    document.write("<p><span>type.isArrayLike(document.body):</span><strong>" + type.isArrayLike(document.body) + "</strong></p></div>");
 
-        document.write("<h2>通过{}或者new Object()创建的对象（就是指除内置对象和HTML对象外的自定义对象）：</h2><div><p><span>type.isPlainObject('asdfasdf'):</span><strong>" + type.isPlainObject("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.isPlainObject('   '):</span><strong>" + type.isPlainObject("   ") + "</strong></p>");
-        document.write("<p><span>type.isPlainObject({a:1, b:2}):</span><strong class='true'>" + type.isPlainObject({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject(123):</span><strong>" + type.isPlainObject(123) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject(NaN):</span><strong>" + type.isPlainObject(NaN) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject(true):</span><strong>" + type.isPlainObject(true) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject(null):</span><strong>" + type.isPlainObject(null) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject(undefined):</span><strong>" + type.isPlainObject(undefined) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject([1,2,3]):</span><strong>" + type.isPlainObject([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject(function(){}):</span><strong>" + type.isPlainObject(function(){}) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject(new Date()):</span><strong>" + type.isPlainObject(new Date()) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject('2012/01/23'):</span><strong>" + type.isPlainObject("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.isPlainObject('2012-01-23'):</span><strong>" + type.isPlainObject("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.isPlainObject(Math):</span><strong>" + type.isPlainObject(Math) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject(/\s*/):</span><strong>" + type.isPlainObject(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject(window):</span><strong>" + type.isPlainObject(window) + "</strong></p>");
-        document.write("<p><span>type.isPlainObject(document.body):</span><strong>" + type.isPlainObject(document.body) + "</strong></p></div>");
+    document.write("<h2>通过{}或者new Object()创建的对象（就是指除内置对象和HTML对象外的自定义对象）：</h2><div><p><span>type.isPlainObject('asdfasdf'):</span><strong>" + type.isPlainObject("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.isPlainObject('   '):</span><strong>" + type.isPlainObject("   ") + "</strong></p>");
+    document.write("<p><span>type.isPlainObject({a:1, b:2}):</span><strong class='true'>" + type.isPlainObject({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject(123):</span><strong>" + type.isPlainObject(123) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject(NaN):</span><strong>" + type.isPlainObject(NaN) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject(true):</span><strong>" + type.isPlainObject(true) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject(null):</span><strong>" + type.isPlainObject(null) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject(undefined):</span><strong>" + type.isPlainObject(undefined) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject([1,2,3]):</span><strong>" + type.isPlainObject([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject(function(){}):</span><strong>" + type.isPlainObject(function(){}) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject(new Date()):</span><strong>" + type.isPlainObject(new Date()) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject('2012/01/23'):</span><strong>" + type.isPlainObject("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.isPlainObject('2012-01-23'):</span><strong>" + type.isPlainObject("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.isPlainObject(Math):</span><strong>" + type.isPlainObject(Math) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject(/\s*/):</span><strong>" + type.isPlainObject(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject(window):</span><strong>" + type.isPlainObject(window) + "</strong></p>");
+    document.write("<p><span>type.isPlainObject(document.body):</span><strong>" + type.isPlainObject(document.body) + "</strong></p></div>");
 
-        document.write("<h2>一个空对象（即不包含任何成员）：</h2><div><p><span>type.isEmptyObject('asdfasdf'):</span><strong>" + type.isEmptyObject("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject('   '):</span><strong>" + type.isEmptyObject("   ") + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject({a:1, b:2}):</span><strong>" + type.isEmptyObject({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject(123):</span><strong class='true'>" + type.isEmptyObject(123) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject(NaN):</span><strong class='true'>" + type.isEmptyObject(NaN) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject(true):</span><strong class='true'>" + type.isEmptyObject(true) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject(null):</span><strong class='true'>" + type.isEmptyObject(null) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject(undefined):</span><strong class='true'>" + type.isEmptyObject(undefined) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject([1,2,3]):</span><strong>" + type.isEmptyObject([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject(function(){}):</span><strong class='true'>" + type.isEmptyObject(function(){}) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject(new Date()):</span><strong class='true'>" + type.isEmptyObject(new Date()) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject('2012/01/23'):</span><strong>" + type.isEmptyObject("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject('2012-01-23'):</span><strong>" + type.isEmptyObject("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject(Math):</span><strong class='true'>" + type.isEmptyObject(Math) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject(/\s*/):</span><strong class='true'>" + type.isEmptyObject(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject(window):</span><strong>" + type.isEmptyObject(window) + "</strong></p>");
-        document.write("<p><span>type.isEmptyObject(document.body):</span><strong>" + type.isEmptyObject(document.body) + "</strong></p></div>");
+    document.write("<h2>一个空对象（即不包含任何成员）：</h2><div><p><span>type.isEmptyObject('asdfasdf'):</span><strong>" + type.isEmptyObject("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject('   '):</span><strong>" + type.isEmptyObject("   ") + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject({a:1, b:2}):</span><strong>" + type.isEmptyObject({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject(123):</span><strong class='true'>" + type.isEmptyObject(123) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject(NaN):</span><strong class='true'>" + type.isEmptyObject(NaN) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject(true):</span><strong class='true'>" + type.isEmptyObject(true) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject(null):</span><strong class='true'>" + type.isEmptyObject(null) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject(undefined):</span><strong class='true'>" + type.isEmptyObject(undefined) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject([1,2,3]):</span><strong>" + type.isEmptyObject([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject(function(){}):</span><strong class='true'>" + type.isEmptyObject(function(){}) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject(new Date()):</span><strong class='true'>" + type.isEmptyObject(new Date()) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject('2012/01/23'):</span><strong>" + type.isEmptyObject("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject('2012-01-23'):</span><strong>" + type.isEmptyObject("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject(Math):</span><strong class='true'>" + type.isEmptyObject(Math) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject(/\s*/):</span><strong class='true'>" + type.isEmptyObject(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject(window):</span><strong>" + type.isEmptyObject(window) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject(document.body):</span><strong>" + type.isEmptyObject(document.body) + "</strong></p></div>");
 
-        document.write("<h2>window对象（如当前窗口或者一个iframe）：</h2><div><p><span>type.isWindow('asdfasdf'):</span><strong>" + type.isWindow("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.isWindow('   '):</span><strong>" + type.isWindow("   ") + "</strong></p>");
-        document.write("<p><span>type.isWindow(window):</span><strong class='true'>" + type.isWindow(window) + "</strong></p>");
-        document.write("<p><span>type.isWindow(123):</span><strong>" + type.isWindow(123) + "</strong></p>");
-        document.write("<p><span>type.isWindow(NaN):</span><strong>" + type.isWindow(NaN) + "</strong></p>");
-        document.write("<p><span>type.isWindow(true):</span><strong>" + type.isWindow(true) + "</strong></p>");
-        document.write("<p><span>type.isWindow(null):</span><strong>" + type.isWindow(null) + "</strong></p>");
-        document.write("<p><span>type.isWindow(undefined):</span><strong>" + type.isWindow(undefined) + "</strong></p>");
-        document.write("<p><span>type.isWindow([1,2,3]):</span><strong>" + type.isWindow([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.isWindow(function(){}):</span><strong>" + type.isWindow(function(){}) + "</strong></p>");
-        document.write("<p><span>type.isWindow({a:1, b:2}):</span><strong>" + type.isWindow({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.isWindow(new Date()):</span><strong>" + type.isWindow(new Date()) + "</strong></p>");
-        document.write("<p><span>type.isWindow('2012/01/23'):</span><strong>" + type.isWindow("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.isWindow('2012-01-23'):</span><strong>" + type.isWindow("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.isWindow(Math):</span><strong>" + type.isWindow(Math) + "</strong></p>");
-        document.write("<p><span>type.isWindow(/\s*/):</span><strong>" + type.isWindow(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.isWindow(document.body):</span><strong>" + type.isWindow(document.body) + "</strong></p></div>");
+    document.write("<h2>window对象（如当前窗口或者一个iframe）：</h2><div><p><span>type.isWindow('asdfasdf'):</span><strong>" + type.isWindow("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.isWindow('   '):</span><strong>" + type.isWindow("   ") + "</strong></p>");
+    document.write("<p><span>type.isWindow(window):</span><strong class='true'>" + type.isWindow(window) + "</strong></p>");
+    document.write("<p><span>type.isWindow(123):</span><strong>" + type.isWindow(123) + "</strong></p>");
+    document.write("<p><span>type.isWindow(NaN):</span><strong>" + type.isWindow(NaN) + "</strong></p>");
+    document.write("<p><span>type.isWindow(true):</span><strong>" + type.isWindow(true) + "</strong></p>");
+    document.write("<p><span>type.isWindow(null):</span><strong>" + type.isWindow(null) + "</strong></p>");
+    document.write("<p><span>type.isWindow(undefined):</span><strong>" + type.isWindow(undefined) + "</strong></p>");
+    document.write("<p><span>type.isWindow([1,2,3]):</span><strong>" + type.isWindow([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.isWindow(function(){}):</span><strong>" + type.isWindow(function(){}) + "</strong></p>");
+    document.write("<p><span>type.isWindow({a:1, b:2}):</span><strong>" + type.isWindow({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isWindow(new Date()):</span><strong>" + type.isWindow(new Date()) + "</strong></p>");
+    document.write("<p><span>type.isWindow('2012/01/23'):</span><strong>" + type.isWindow("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.isWindow('2012-01-23'):</span><strong>" + type.isWindow("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.isWindow(Math):</span><strong>" + type.isWindow(Math) + "</strong></p>");
+    document.write("<p><span>type.isWindow(/\s*/):</span><strong>" + type.isWindow(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.isWindow(document.body):</span><strong>" + type.isWindow(document.body) + "</strong></p></div>");
 
-        document.write("<h2>类型字符串：</h2><div><p><span>type.type('asdfasdf'):</span><strong>" + type.type("asdfasdf") + "</strong></p>");
-        document.write("<p><span>type.type('   '):</span><strong>" + type.type("   ") + "</strong></p>");
-        document.write("<p><span>type.type(123):</span><strong>" + type.type(123) + "</strong></p>");
-        document.write("<p><span>type.type(NaN):</span><strong>" + type.type(NaN) + "</strong></p>");
-        document.write("<p><span>type.type(true):</span><strong>" + type.type(true) + "</strong></p>");
-        document.write("<p><span>type.type(null):</span><strong>" + type.type(null) + "</strong></p>");
-        document.write("<p><span>type.type(undefined):</span><strong>" + type.type(undefined) + "</strong></p>");
-        document.write("<p><span>type.type([1,2,3]):</span><strong>" + type.type([1,2,3]) + "</strong></p>");
-        document.write("<p><span>type.type(function(){}):</span><strong>" + type.type(function(){}) + "</strong></p>");
-        document.write("<p><span>type.type({a:1, b:2}):</span><strong>" + type.type({a:1, b:2}) + "</strong></p>");
-        document.write("<p><span>type.type(new Date()):</span><strong>" + type.type(new Date()) + "</strong></p>");
-        document.write("<p><span>type.type('2012/01/23'):</span><strong>" + type.type("2012/01/23") + "</strong></p>");
-        document.write("<p><span>type.type('2012-01-23'):</span><strong>" + type.type("2012-01-23") + "</strong></p>");
-        document.write("<p><span>type.type(Math):</span><strong>" + type.type(Math) + "</strong></p>");
-        document.write("<p><span>type.type(/\s*/):</span><strong>" + type.type(/\s*/) + "</strong></p>");
-        document.write("<p><span>type.type(window):</span><strong>" + type.type(window) + "</strong></p>");
-        document.write("<p><span>type.type(document.body):</span><strong>" + type.type(document.body) + "</strong></p></div>");
-    </script>
+    document.write("<h2>类型字符串：</h2><div><p><span>type.type('asdfasdf'):</span><strong>" + type.type("asdfasdf") + "</strong></p>");
+    document.write("<p><span>type.type('   '):</span><strong>" + type.type("   ") + "</strong></p>");
+    document.write("<p><span>type.type(123):</span><strong>" + type.type(123) + "</strong></p>");
+    document.write("<p><span>type.type(NaN):</span><strong>" + type.type(NaN) + "</strong></p>");
+    document.write("<p><span>type.type(true):</span><strong>" + type.type(true) + "</strong></p>");
+    document.write("<p><span>type.type(null):</span><strong>" + type.type(null) + "</strong></p>");
+    document.write("<p><span>type.type(undefined):</span><strong>" + type.type(undefined) + "</strong></p>");
+    document.write("<p><span>type.type([1,2,3]):</span><strong>" + type.type([1,2,3]) + "</strong></p>");
+    document.write("<p><span>type.type(function(){}):</span><strong>" + type.type(function(){}) + "</strong></p>");
+    document.write("<p><span>type.type({a:1, b:2}):</span><strong>" + type.type({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.type(new Date()):</span><strong>" + type.type(new Date()) + "</strong></p>");
+    document.write("<p><span>type.type('2012/01/23'):</span><strong>" + type.type("2012/01/23") + "</strong></p>");
+    document.write("<p><span>type.type('2012-01-23'):</span><strong>" + type.type("2012-01-23") + "</strong></p>");
+    document.write("<p><span>type.type(Math):</span><strong>" + type.type(Math) + "</strong></p>");
+    document.write("<p><span>type.type(/\s*/):</span><strong>" + type.type(/\s*/) + "</strong></p>");
+    document.write("<p><span>type.type(window):</span><strong>" + type.type(window) + "</strong></p>");
+    document.write("<p><span>type.type(document.body):</span><strong>" + type.type(document.body) + "</strong></p></div>");
+  </script>
 </div>
 </body>
 </html>
