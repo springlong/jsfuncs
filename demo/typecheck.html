@@ -13,7 +13,7 @@
     #container h2{padding-bottom:10px;margin-top:30px;}
     #container div{overflow:auto;height:200px;padding-left:20px;border:1px solid gray;background:#eee;}
     #container p{font-family:"Courier New";}
-    #container p span{display:inline-block;width:260px;text-align:left;}
+    #container p span{display:inline-block;width:400px;text-align:left;}
     #container p strong{display:inline-block;width:30px;text-align:right;}
     #container p strong.true{color:red;}
   </style>
@@ -187,6 +187,7 @@
     document.write("<h2>一个空对象（即不包含任何成员）：</h2><div><p><span>type.isEmptyObject('asdfasdf'):</span><strong>" + type.isEmptyObject("asdfasdf") + "</strong></p>");
     document.write("<p><span>type.isEmptyObject('   '):</span><strong>" + type.isEmptyObject("   ") + "</strong></p>");
     document.write("<p><span>type.isEmptyObject({a:1, b:2}):</span><strong>" + type.isEmptyObject({a:1, b:2}) + "</strong></p>");
+    document.write("<p><span>type.isEmptyObject({}):</span><strong class='true'>" + type.isEmptyObject({}) + "</strong></p>");
     document.write("<p><span>type.isEmptyObject(123):</span><strong class='true'>" + type.isEmptyObject(123) + "</strong></p>");
     document.write("<p><span>type.isEmptyObject(NaN):</span><strong class='true'>" + type.isEmptyObject(NaN) + "</strong></p>");
     document.write("<p><span>type.isEmptyObject(true):</span><strong class='true'>" + type.isEmptyObject(true) + "</strong></p>");
@@ -200,7 +201,7 @@
     document.write("<p><span>type.isEmptyObject(Math):</span><strong class='true'>" + type.isEmptyObject(Math) + "</strong></p>");
     document.write("<p><span>type.isEmptyObject(/\s*/):</span><strong class='true'>" + type.isEmptyObject(/\s*/) + "</strong></p>");
     document.write("<p><span>type.isEmptyObject(window):</span><strong>" + type.isEmptyObject(window) + "</strong></p>");
-    document.write("<p><span>type.isEmptyObject(document.body):</span><strong>" + type.isEmptyObject(document.body) + "</strong></p></div>");
+    document.write("<p><span>type.isEmptyObject(document.body):</span><strong class='true'>" + type.isEmptyObject(document.body) + "</strong></p></div>");
 
     document.write("<h2>window对象（如当前窗口或者一个iframe）：</h2><div><p><span>type.isWindow('asdfasdf'):</span><strong>" + type.isWindow("asdfasdf") + "</strong></p>");
     document.write("<p><span>type.isWindow('   '):</span><strong>" + type.isWindow("   ") + "</strong></p>");
@@ -238,6 +239,8 @@
     document.write("<p><span>type.type(window):</span><strong>" + type.type(window) + "</strong></p>");
     document.write("<p><span>type.type(document.body):</span><strong>" + type.type(document.body) + "</strong></p></div>");
   </script>
+  <iframe>dda</iframe>
+  <iframe>dda</iframe>
 </div>
 </body>
 </html>

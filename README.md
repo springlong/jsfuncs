@@ -7,7 +7,7 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 ### [typecheck.js](./scripts/typecheck.js)
 
-提供了`.isStr()`、 `.isNumeric()`、 `.isFunction()`、 `.isArray()`、 `.isArrayLike()`、 `.isDate()`、 `.isPlainObject()`、 `.isEmptyObject()`、 `.isWindow()` 等常用类型判断，点击查看 [demo](//htmlpreview.github.io/?https://github.com/springlong/jsfuncs/blob/master/demo/typecheck.html)。
+提供了`.isStr()`、 `.isNumeric()`、 `.isFunction()`、 `.isArray()`、 `.isArrayLike()`、 `.isDate()`、 `.isPlainObject()`、 `.isEmptyObject()`、 `.isWindow()` 等常用类型判断。
 
 
 
@@ -143,7 +143,7 @@ jsfuncs是一个从工作中、学习中整理总结编写的实用函数库，�
 
 ### [event.js](./scripts/event.js)
 
-兼容IE非标准事件模型的方法封装，对事件绑定、解除绑定、DOMReady事件（DomContentLoaded）、事件对象做了兼容处理。并对老版本Chrome、Safari等浏览器的mouseenter、mouseleave事件提供了支持。该脚本对外提供 `bindEvent()`、 `removeEvent()`、 `bindReady()` 三个方法。点击查看 [demo](//htmlpreview.github.io/?https://github.com/springlong/jsfuncs/blob/master/demo/event.html)。
+兼容IE非标准事件模型的方法封装，对事件绑定、解除绑定、DOMReady事件（DomContentLoaded）、事件对象做了兼容处理。并对老版本Chrome、Safari等浏览器的mouseenter、mouseleave事件提供了支持。该脚本对外提供 `bindEvent()`、 `removeEvent()`、 `bindReady()` 三个方法。
 
 1. [bindEvent (ele, name, handler, capture)](./scripts/event.js)<br> 为目标元素添加事件绑定。
 

@@ -7,7 +7,7 @@ var type = {
    * @param  {任意类型}  value 需要判断的值
    * @return {Boolean}       是/否
    */
-  isNode: function(value) {
+  isDom: function(value) {
     return value && value.nodeType !== undefined;
   },
 
@@ -67,7 +67,8 @@ var type = {
 
   /**
    * 判断类型是否为：“数组”（即包含length值，且该值为数字类型）
-   * <br />注意：window对象的length属性为1，function对象的length属性为0，他们都不作为“数组”进行处理。
+   * <br />注意：window对象的length属性为当前窗口中frames的数量（包括IFRAMES），不作为“数组”进行处理。
+   * <br />注意：function对象的length属性为参数的数量，不作为“数组”进行处理。
    * @param  {任意类型} value 需要判断的值
    * @return {Boolean}        是/否
    */
@@ -111,7 +112,9 @@ var type = {
     var name;
     if(this.isArrayLike(value)) return value.length < 1;
     for(name in value){
-      return false;
+      if (Object.prototype.hasOwnProperty.call(value, name)) {
+        return false;
+      }
     }
     return true;
   },
